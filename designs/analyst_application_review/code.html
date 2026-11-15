@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Kestrel Finance</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacbb8", "on-tertiary-fixed-variant": "#604100", "surface-container-highest": "#32353c", "tertiary-fixed": "#ffddae", "surface-container": "#1d2026", "surface": "#10131a", "surface-bright": "#363940", "on-secondary": "#30009b", "secondary-fixed-dim": "#c9beff", "secondary-fixed": "#e6deff", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#005323", "primary-fixed": "#65ff90", "secondary-container": "#4f00f1", "inverse-on-surface": "#2e3037", "error": "#ffb4ab", "on-primary-fixed": "#00210a", "pure-white": "#FFFFFF", "surface-dark-elevated": "#1A202E", "surface-tint": "#00e46d", "inverse-surface": "#e1e2eb", "on-tertiary-fixed": "#281800", "on-background": "#e1e2eb", "on-tertiary-container": "#795513", "outline": "#849584", "surface-dim": "#10131a", "primary-container": "#02f576", "tertiary": "#ffefdc", "primary-fixed-dim": "#00e46d", "tertiary-container": "#ffcd80", "on-secondary-fixed": "#1b0062", "surface-dark": "#121722", "on-surface": "#e1e2eb", "error-container": "#93000a", "on-error": "#690005", "surface-container-high": "#272a31", "surface-container-lowest": "#0b0e14", "surface-variant": "#32353c", "on-tertiary": "#432c00", "outline-variant": "#3b4b3c", "on-secondary-container": "#c5baff", "slate-muted": "#B0B8C4", "surface-container-low": "#191c22", "on-primary-container": "#006b2f", "secondary": "#c9beff", "on-secondary-fixed-variant": "#4600d8", "primary": "#c9ffcd", "tertiary-fixed-dim": "#efbf73", "on-primary": "#003916", "background": "#10131a", "inverse-primary": "#006d31" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1.5rem", "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "margin": "3rem", "margin-mobile": "1.25rem" }, "fontFamily": { "label-md": ["Montserrat"], "display-hero": ["Montserrat"], "headline-lg": ["Montserrat"], "display-hero-mobile": ["Montserrat"], "body-md": ["Montserrat"], "headline-sm": ["Montserrat"], "body-lg": ["Montserrat"], "label-sm": ["Montserrat"], "body-sm": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "headline-md": ["Montserrat"] }, "fontSize": { "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen selection:bg-primary-container selection:text-surface"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight leading-tight truncate max-w-[190px]">Sanction Readiness Review</span><span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-widest text-[9px]">INTERNAL USE ONLY - INTAKE</span></div></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full px-gutter-mobile py-space-sm space-y-space-md">
+<!-- Compliance & Status Banner Group -->
+<div class="flex flex-col space-y-space-xs">
+<!-- Governance Status Chip -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-sm rounded-xl shadow-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_12px_rgba(2,245,118,0.6)] animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">PHASE 2 • PENDING APPROVAL</span>
+</div>
+<span class="material-symbols-outlined text-slate-muted text-[18px]">verified_user</span>
+</div>
+<!-- Mandatory Regulatory / Bank Compliance Note -->
+<div class="flex items-start gap-space-sm bg-surface-container-high px-space-md py-space-sm rounded-xl">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-tertiary-container uppercase tracking-wide">Governance Notice</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+          Preparation only. Final underwriting decision rests entirely with the designated Credit Analyst under strict banking mandates.
+        </p>
+</div>
+</div>
+</div>
+<!-- Applicant Summary Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-widest text-[10px]">CASE REF: APP-2026-0001</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-highest text-slate-muted font-label-sm text-label-sm text-[10px] uppercase font-medium">SME Prime Tier</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Sample Applicant Pvt Ltd</h2>
+<span class="font-body-sm text-body-sm text-slate-muted">Sector: Light Engineering • Pune Unit 1</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase text-[10px]">Requested Limit</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹ 18,00,000</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase text-[10px]">Intake Score</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-headline-sm text-headline-sm text-pure-white font-bold">96.4</span>
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Section Segmented Switcher -->
+<div class="flex bg-surface-container-lowest p-1 rounded-xl shadow-inner">
+<button class="flex-1 py-2 rounded-lg font-label-md text-label-md font-semibold text-center transition-all bg-primary-container text-surface-container-lowest shadow-[0_0_14px_rgba(2,245,118,0.25)] flex items-center justify-center gap-1.5" id="tab-btn-docs" onclick="switchSection('docs')">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>Validated Docs</span>
+</button>
+<button class="flex-1 py-2 rounded-lg font-label-md text-label-md font-semibold text-center transition-all text-slate-muted hover:text-on-surface flex items-center justify-center gap-1.5" id="tab-btn-data" onclick="switchSection('data')">
+<span class="material-symbols-outlined text-[18px]">dataset</span>
+<span>Extracted Fields</span>
+</button>
+</div>
+<!-- SECTION A: VALIDATED DOCUMENTS -->
+<div class="flex flex-col space-y-space-md" id="section-docs">
+<!-- Quick Inspection Card -->
+<div class="bg-surface-container rounded-xl p-space-md space-y-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">preview</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-bold">Active Document Preview</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm text-[10px] font-semibold">24 PAGES</span>
+</div>
+<!-- Preview Scrim with Document Placeholder Details -->
+<div class="relative rounded-lg overflow-hidden bg-surface-dark-elevated">
+<img class="w-full h-44 object-cover opacity-60" data-alt="Close-up clean high-contrast scan of audited balance sheet and financial statements on dark digital interface overlay with green digital intake verified watermarks and financial line charts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnGbsF8Qh0KmQlBINonKBZatr0omPmSSQpaDiykPNej5ocA5Drq8tn_KU095TtjymVO25wUukm4qwxHmz4Of9Pzjo5bj7qDZ4JhoKREAm4cqfXHvjP8PnL-Pbtv-8aGsQuwY2q5tIulR2Im4RnbjxADrzlXR8keJ2AnumNeRbjevIf8eddYAqR2rF5mpGOQHNnRv6bX3r0_E36AfmQ6g0iZhgb5mRzGpULkIPzjdQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/70 to-transparent flex flex-col justify-end p-space-md">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">Audited Financials FY24-25</span>
+<p class="font-body-sm text-body-sm text-pure-white font-medium">Profit &amp; Loss Statement with Schedule III Balance Sheet</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-slate-muted text-[11px]">Certifying CA: K.S. &amp; Associates (FRN: 01429N)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span class="font-label-sm text-label-sm tracking-tight text-[11px]">SHA-256 Digest Confirmed</span>
+</div>
+<button class="bg-surface-container-highest px-space-md py-1.5 rounded-lg text-pure-white font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform">
+<span>Expand</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Group 1: Financial Statements -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider font-semibold">Financial Statements</span>
+<span class="font-label-sm text-label-sm text-primary text-[11px]">2 of 2 Verified</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-sm shadow-sm">
+<!-- Item 1 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0 pr-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-pure-white font-semibold truncate">Audited Financials (2Y)</span>
+<span class="font-body-sm text-body-sm text-slate-muted text-[12px] truncate">FY 2023-24 &amp; FY 2024-25</span>
+</div>
+</div>
+<span class="shrink-0 px-2 py-1 rounded bg-primary/10 text-primary font-label-sm text-label-sm text-[10px] font-bold uppercase tracking-wider">INTAKE VERIFIED</span>
+</div>
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0 pr-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">receipt_long</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-pure-white font-semibold truncate">Bank Statements (12M)</span>
+<span class="font-body-sm text-body-sm text-slate-muted text-[12px] truncate">HDFC Current A/c •••• 9104</span>
+</div>
+</div>
+<span class="shrink-0 px-2 py-1 rounded bg-primary/10 text-primary font-label-sm text-label-sm text-[10px] font-bold uppercase tracking-wider">INTAKE VERIFIED</span>
+</div>
+</div>
+</div>
+<!-- Group 2: Regulatory & Tax -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider font-semibold">Regulatory &amp; Tax Filings</span>
+<span class="font-label-sm text-label-sm text-secondary text-[11px]">Portal Linked</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-sm shadow-sm">
+<!-- Item 1 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0 pr-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">fact_check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-pure-white font-semibold truncate">GST Returns GSTR-3B</span>
+<span class="font-body-sm text-body-sm text-slate-muted text-[12px] truncate">12 Months Consolidated</span>
+</div>
+</div>
+<span class="shrink-0 px-2 py-1 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm text-[10px] font-bold uppercase tracking-wider">CHECKSUM CLEAR</span>
+</div>
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0 pr-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-pure-white font-semibold truncate">ITR-6 Corporate Filing</span>
+<span class="font-body-sm text-body-sm text-slate-muted text-[12px] truncate">AY 2024-25 Ack #49102830</span>
+</div>
+</div>
+<span class="shrink-0 px-2 py-1 rounded bg-secondary/15 text-secondary font-label-sm text-label-sm text-[10px] font-bold uppercase tracking-wider">CHECKSUM CLEAR</span>
+</div>
+</div>
+</div>
+<!-- Group 3: Constitutional Docs -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider font-semibold">Constitutional &amp; Legal</span>
+<span class="font-label-sm text-label-sm text-primary text-[11px]">Identity Cleared</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md space-y-space-sm shadow-sm">
+<!-- Item 1 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0 pr-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-pure-white font-semibold truncate">Promoter KYC Dossier</span>
+<span class="font-body-sm text-body-sm text-slate-muted text-[12px] truncate">2 Directors (PAN/Aadhaar)</span>
+</div>
+</div>
+<span class="shrink-0 px-2 py-1 rounded bg-primary/10 text-primary font-label-sm text-label-sm text-[10px] font-bold uppercase tracking-wider">VALIDATED</span>
+</div>
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0 pr-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px]">gavel</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-pure-white font-semibold truncate">Board Resolution</span>
+<span class="font-body-sm text-body-sm text-slate-muted text-[12px] truncate">Borrowing Powers under Sec 179</span>
+</div>
+</div>
+<span class="shrink-0 px-2 py-1 rounded bg-primary/10 text-primary font-label-sm text-label-sm text-[10px] font-bold uppercase tracking-wider">VALIDATED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION B: EXTRACTED DATA FIELDS -->
+<div class="hidden flex flex-col space-y-space-sm" id="section-data">
+<!-- Notice of Read-Only Audit State -->
+<div class="flex items-center gap-space-sm bg-surface-container px-space-md py-space-sm rounded-lg text-slate-muted">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-sm text-label-sm">Audited extraction points. Source citations directly traceable.</span>
+</div>
+<!-- Data Field 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider text-[11px]">Turnover / Total Revenue</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm text-[10px] uppercase">FY24-25</span>
+</div>
+<div class="flex items-baseline justify-between pt-0.5">
+<span class="font-headline-sm text-headline-sm text-pure-white font-bold">₹ 4,82,50,000</span>
+<span class="text-primary-fixed-dim font-label-sm text-label-sm">+18.4% YoY</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-slate-muted bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[14px]">link</span>
+<span class="font-label-sm text-label-sm text-[11px]">Source: Audited Financials, Page 4, line 12</span>
+</div>
+</div>
+<!-- Data Field 2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider text-[11px]">Operating EBITDA</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm text-[10px] uppercase">Normalized</span>
+</div>
+<div class="flex items-baseline justify-between pt-0.5">
+<span class="font-headline-sm text-headline-sm text-pure-white font-bold">₹ 68,40,000</span>
+<span class="text-primary font-label-sm text-label-sm">Healthy</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-slate-muted bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[14px]">link</span>
+<span class="font-label-sm text-label-sm text-[11px]">Source: Audited Financials, Page 6, line 8</span>
+</div>
+</div>
+<!-- Data Field 3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider text-[11px]">EBITDA Margin</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm text-[10px] uppercase">Margin Ratio</span>
+</div>
+<div class="flex items-baseline justify-between pt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">14.18%</span>
+<span class="text-slate-muted font-body-sm text-body-sm text-[12px]">Peer benchmark: 11.8%</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-slate-muted bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[14px]">link</span>
+<span class="font-label-sm text-label-sm text-[11px]">Source: Audited Financials, Page 6, line 14</span>
+</div>
+</div>
+<!-- Data Field 4 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider text-[11px]">Existing Secured Debt</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-tertiary-container font-label-sm text-label-sm text-[10px] uppercase">Outstanding</span>
+</div>
+<div class="flex items-baseline justify-between pt-0.5">
+<span class="font-headline-sm text-headline-sm text-pure-white font-bold">₹ 52,00,000</span>
+<span class="text-slate-muted font-label-sm text-label-sm">Equitas Small Fin Bank</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-slate-muted bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[14px]">link</span>
+<span class="font-label-sm text-label-sm text-[11px]">Source: Financials Schedule III, Page 11, line 3</span>
+</div>
+</div>
+<!-- Data Field 5 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider text-[11px]">Avg Monthly Bank Credit</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm text-[10px] uppercase">Cashflow</span>
+</div>
+<div class="flex items-baseline justify-between pt-0.5">
+<span class="font-headline-sm text-headline-sm text-pure-white font-bold">₹ 38,20,000</span>
+<span class="text-primary font-label-sm text-label-sm">Consistent</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-slate-muted bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[14px]">link</span>
+<span class="font-label-sm text-label-sm text-[11px]">Source: Bank Stmt, Summary pg 2</span>
+</div>
+</div>
+<!-- Data Field 6 -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider text-[11px]">GST Turnover Reconciliation</span>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm text-[10px] uppercase font-bold">HIGH ALIGNMENT</span>
+</div>
+<div class="flex items-baseline justify-between pt-0.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">99.1% match</span>
+<span class="text-slate-muted font-body-sm text-body-sm text-[12px]">Variance: 0.9%</span>
+</div>
+<div class="flex items-center gap-1.5 pt-1 text-slate-muted bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary text-[14px]">link</span>
+<span class="font-label-sm text-label-sm text-[11px]">Source: GSTR-3B vs Financials</span>
+</div>
+</div>
+</div>
+<!-- Operational Flow Card / Analyst Action Area -->
+<div class="bg-surface-container p-space-md rounded-xl space-y-space-sm shadow-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">smart_toy</span>
+<span class="font-label-md text-label-md text-on-surface">Field Extraction Assistant</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-slate-muted font-label-sm text-label-sm text-[10px] uppercase tracking-wider">Locked</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted leading-relaxed">
+      Automated synthesis and field extraction triggers unlock immediately after supervisor gatekeeper signs off Phase 2 intake verification.
+    </p>
+<!-- Bottom Action Row -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 bg-primary-container text-surface-container-lowest font-label-md text-label-md font-bold py-3 rounded-lg shadow-[0_0_16px_rgba(2,245,118,0.35)] flex items-center justify-center gap-1.5 active:scale-98 transition-transform">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+<span>Acknowledge File</span>
+</button>
+<button class="w-12 h-12 bg-surface-container-high text-on-surface rounded-lg flex items-center justify-center active:scale-95 transition-transform" title="Add Analyst Annotations">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function switchSection(target) {
+    const docsSec = document.getElementById('section-docs');
+    const dataSec = document.getElementById('section-data');
+    const tabDocs = document.getElementById('tab-btn-docs');
+    const tabData = document.getElementById('tab-btn-data');
+
+    if (target === 'docs') {
+      docsSec.classList.remove('hidden');
+      dataSec.classList.add('hidden');
+      
+      tabDocs.className = "flex-1 py-2 rounded-lg font-label-md text-label-md font-semibold text-center transition-all bg-primary-container text-surface-container-lowest shadow-[0_0_14px_rgba(2,245,118,0.25)] flex items-center justify-center gap-1.5";
+      tabData.className = "flex-1 py-2 rounded-lg font-label-md text-label-md font-semibold text-center transition-all text-slate-muted hover:text-on-surface flex items-center justify-center gap-1.5";
+    } else {
+      docsSec.classList.add('hidden');
+      dataSec.classList.remove('hidden');
+
+      tabData.className = "flex-1 py-2 rounded-lg font-label-md text-label-md font-semibold text-center transition-all bg-primary-container text-surface-container-lowest shadow-[0_0_14px_rgba(2,245,118,0.25)] flex items-center justify-center gap-1.5";
+      tabDocs.className = "flex-1 py-2 rounded-lg font-label-md text-label-md font-semibold text-center transition-all text-slate-muted hover:text-on-surface flex items-center justify-center gap-1.5";
+    }
+  }
+</script></main></body></html>

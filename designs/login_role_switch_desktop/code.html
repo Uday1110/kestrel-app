@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-container":"#02f576","surface-container-low":"#191c22","primary":"#c9ffcd","secondary-fixed":"#e6deff","on-primary-fixed-variant":"#005323","inverse-on-surface":"#2e3037","slate-muted":"#B0B8C4","on-tertiary":"#432c00","on-error":"#690005","surface":"#10131a","secondary-container":"#4f00f1","surface-bright":"#363940","error-container":"#93000a","surface-dark":"#121722","on-error-container":"#ffdad6","on-secondary-fixed":"#1b0062","primary-fixed":"#65ff90","inverse-primary":"#006d31","surface-variant":"#32353c","tertiary-fixed-dim":"#efbf73","error":"#ffb4ab","secondary":"#c9beff","outline-variant":"#3b4b3c","on-secondary":"#30009b","on-secondary-fixed-variant":"#4600d8","surface-container-high":"#272a31","on-primary-container":"#006b2f","on-primary":"#003916","surface-dark-elevated":"#1A202E","on-secondary-container":"#c5baff","tertiary-fixed":"#ffddae","on-background":"#e1e2eb","primary-fixed-dim":"#00e46d","on-tertiary-fixed":"#281800","pure-white":"#FFFFFF","surface-container-lowest":"#0b0e14","inverse-surface":"#e1e2eb","surface-tint":"#00e46d","on-surface":"#e1e2eb","tertiary-container":"#ffcd80","on-surface-variant":"#bacbb8","secondary-fixed-dim":"#c9beff","on-tertiary-fixed-variant":"#604100","surface-container":"#1d2026","background":"#10131a","surface-container-highest":"#32353c","on-tertiary-container":"#795513","outline":"#849584","surface-dim":"#10131a","on-primary-fixed":"#00210a","tertiary":"#ffefdc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter-mobile":"1rem","gutter":"1.5rem","margin":"3rem","space-xl":"2.5rem"},"fontFamily":{"headline-lg-mobile":["Montserrat"],"display-hero-mobile":["Montserrat"],"headline-sm":["Montserrat"],"label-md":["Montserrat"],"body-sm":["Montserrat"],"display-hero":["Montserrat"],"body-lg":["Montserrat"],"body-md":["Montserrat"],"headline-md":["Montserrat"],"label-sm":["Montserrat"],"headline-lg":["Montserrat"]},"fontSize":{"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><main class="w-full min-h-screen bg-surface flex items-center justify-center p-gutter"><div class="flex flex-col w-full max-w-5xl mx-auto py-6">
+<!-- Governance Protocol Banner -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-xl p-space-md mb-space-lg flex items-start sm:items-center gap-space-md">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/10 via-transparent to-transparent pointer-events-none"></div>
+<div class="flex-shrink-0 w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">policy</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">Strict Governance Protocol</span>
+<span class="font-label-sm text-label-sm text-slate-muted">|</span>
+<span class="font-label-sm text-label-sm text-slate-muted font-medium">Internal Bank Deployment Only</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+        All corporate credit underwriting decisions and exposure allocations are strictly executed by accredited human credit analysts under Institutional Lending Charter Section 4.2.
+      </p>
+</div>
+<div class="hidden md:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container rounded-full text-slate-muted flex-shrink-0">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#02f576]"></span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase text-on-surface">SOC2 // FIPS-140-3</span>
+</div>
+</div>
+<!-- Main Gateway Container -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Left Column: Role Gateway Selector & Telemetry -->
+<div class="lg:col-span-7 flex flex-col justify-between space-y-space-md">
+<!-- Brand & Title Block -->
+<div class="bg-surface-dark rounded-xl p-space-lg shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-surface-container-lowest shadow-[0_0_16px_rgba(2,245,118,0.35)]">
+<span class="material-symbols-outlined font-bold text-2xl">account_balance</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-pure-white tracking-tight">KESTREL<span class="text-primary-container font-light">FINANCE</span></span>
+<p class="font-label-sm text-label-sm text-slate-muted">Corporate Lending Origination Engine</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container text-primary-container font-semibold tracking-wider">
+            PORTAL v4.8.2
+          </span>
+</div>
+<h1 class="font-headline-md text-headline-md text-pure-white mb-space-xs">
+          Select Clearance Gateway
+        </h1>
+<p class="font-body-sm text-body-sm text-slate-muted mb-space-lg">
+          Routing context determines workspace encryption cipher, ledger isolation constraints, and forensic tool suites.
+        </p>
+<!-- Interactive Role Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md" id="role-selector-container">
+<!-- Tile 1: Relationship Manager (Default Active) -->
+<button class="role-card text-left p-space-md rounded-xl bg-surface-dark-elevated shadow-lg transition-all duration-200 relative overflow-hidden group" id="role-rm-btn" onclick="selectRole('rm')" type="button">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary-container shadow-[0_0_12px_#02f576]" id="rm-active-indicator"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-lg">folder_shared</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-primary-container flex items-center justify-center" id="rm-radio">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-pure-white text-base leading-snug">Relationship Manager</h3>
+<p class="font-label-sm text-label-sm text-primary font-medium tracking-wide uppercase mt-0.5">Origination &amp; Intake</p>
+<ul class="mt-space-sm space-y-1">
+<li class="flex items-center gap-1.5 font-body-sm text-body-sm text-slate-muted">
+<span class="material-symbols-outlined text-sm text-primary-container">check_circle</span>
+                Intake Orchestration
+              </li>
+<li class="flex items-center gap-1.5 font-body-sm text-body-sm text-slate-muted">
+<span class="material-symbols-outlined text-sm text-primary-container">check_circle</span>
+                Borrower File Aggregation
+              </li>
+<li class="flex items-center gap-1.5 font-body-sm text-body-sm text-slate-muted">
+<span class="material-symbols-outlined text-sm text-primary-container">check_circle</span>
+                Completeness Gatechecks
+              </li>
+</ul>
+</button>
+<!-- Tile 2: Credit Analyst -->
+<button class="role-card text-left p-space-md rounded-xl bg-surface-container-high/60 shadow-lg transition-all duration-200 relative overflow-hidden group opacity-85 hover:opacity-100" id="role-ca-btn" onclick="selectRole('ca')" type="button">
+<div class="absolute top-0 left-0 right-0 h-1 bg-transparent transition-all" id="ca-active-indicator"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-lg">fact_check</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-surface-container-lowest flex items-center justify-center" id="ca-radio">
+<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-pure-white text-base leading-snug">Credit Analyst</h3>
+<p class="font-label-sm text-label-sm text-secondary font-medium tracking-wide uppercase mt-0.5">Risk &amp; Underwriting</p>
+<ul class="mt-space-sm space-y-1">
+<li class="flex items-center gap-1.5 font-body-sm text-body-sm text-slate-muted">
+<span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+                Underwriting Readiness
+              </li>
+<li class="flex items-center gap-1.5 font-body-sm text-body-sm text-slate-muted">
+<span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+                Forensic Doc Inspection
+              </li>
+<li class="flex items-center gap-1.5 font-body-sm text-body-sm text-slate-muted">
+<span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+                Structured Data Recalibration
+              </li>
+</ul>
+</button>
+</div>
+</div>
+<!-- Live Underwriting Intake Telemetry Mini-Card -->
+<div class="bg-surface-dark rounded-xl p-space-md shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="relative w-12 h-12 flex-shrink-0">
+<!-- Inline Mini Ring Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-label-sm text-label-sm font-bold text-pure-white">
+              82%
+            </div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-slate-muted tracking-wider block">Intake Queue Health</span>
+<span class="font-body-sm text-body-sm text-pure-white font-semibold">14 Syndicated Facilities Under Review</span>
+</div>
+</div>
+<div class="text-right hidden sm:block">
+<span class="font-label-sm text-label-sm text-primary-container font-mono block">$1.24B ACTIVE PIPELINE</span>
+<span class="font-body-sm text-body-sm text-slate-muted">Avg Turnaround: 4.2h</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Authentication Terminal -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="bg-surface-dark-elevated rounded-xl p-space-lg shadow-xl flex-1 flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Header Inside Auth -->
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-primary-container font-semibold tracking-wider">HSM-Secured Terminal</span>
+<h2 class="font-headline-sm text-headline-sm text-pure-white">Staff Credential Access</h2>
+</div>
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-lg">vpn_key</span>
+</div>
+</div>
+<form class="space-y-space-md" id="auth-form" onsubmit="handleFormSubmit(event)">
+<!-- Hidden Role Input -->
+<input id="selected-role-input" type="hidden" value="rm"/>
+<!-- Field 1: Staff ID / Email -->
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface" for="staff-id">Staff Corporate ID / UPN</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-muted">
+<span class="material-symbols-outlined text-lg">badge</span>
+</div>
+<input class="w-full bg-surface-container-lowest text-pure-white pl-10 pr-3 py-2.5 rounded text-body-md font-body-md focus:outline-none focus:ring-1 focus:ring-primary-container placeholder-slate-muted transition-all" id="staff-id" placeholder="e.g. KF-884920@bank.kestrel.internal" required="" type="text" value="analyst.williams@corporate.kestrel.internal"/>
+</div>
+</div>
+<!-- Field 2: Entrust Token / Hardware OTP -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="otp-token">Hardware OTP / Entrust Code</label>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors" href="javascript:void(0)">Resync Token</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-muted">
+<span class="material-symbols-outlined text-lg">pin</span>
+</div>
+<input class="w-full bg-surface-container-lowest text-pure-white font-mono tracking-widest pl-10 pr-3 py-2.5 rounded text-body-md font-body-md focus:outline-none focus:ring-1 focus:ring-primary-container placeholder-slate-muted transition-all" id="otp-token" maxlength="8" placeholder="••• ••• ••" required="" type="password" value="94821034"/>
+</div>
+<p class="font-label-sm text-label-sm text-slate-muted">Enter 8-digit algorithmic hash from physical fob or Knox app.</p>
+</div>
+<!-- Session Persistence Radio/Toggle -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between cursor-pointer" onclick="toggleSessionValidity()">
+<div class="flex items-center gap-space-sm">
+<div class="w-5 h-5 rounded bg-primary-container flex items-center justify-center transition-all" id="session-toggle-box">
+<span class="material-symbols-outlined text-sm font-bold text-surface-container-lowest" id="session-check-icon">check</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-pure-white block leading-tight">Extended Trading Session</span>
+<span class="font-label-sm text-label-sm text-slate-muted">Retain encrypted token across intake desks (8 Hours)</span>
+</div>
+</div>
+<input checked="" class="hidden" id="session-validity" type="checkbox"/>
+</div>
+<!-- Active Gateway Badge Indicator -->
+<div class="p-2.5 bg-surface-container rounded flex items-center justify-between text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary-container">shield</span>
+<span class="font-label-sm text-label-sm font-medium">Gateway Context:</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary-container uppercase tracking-wider" id="active-badge-display">
+                RELATIONSHIP MANAGER
+              </span>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full py-3.5 px-space-md rounded bg-primary-container text-surface-container-lowest font-headline-sm text-headline-sm font-bold tracking-wide uppercase shadow-[0_0_24px_rgba(2,245,118,0.35)] hover:shadow-[0_0_32px_rgba(2,245,118,0.6)] hover:bg-primary-fixed-dim transition-all duration-200 flex items-center justify-center gap-2" id="submit-cta" type="submit">
+<span>Access Origination Workspace</span>
+<span class="material-symbols-outlined text-xl font-bold">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Terminal Footer Identity Hash -->
+<div class="pt-space-md mt-space-md flex items-center justify-between font-label-sm text-label-sm text-slate-muted">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-mono text-xs">NODE: LDN-GATE-04</span>
+</div>
+<span class="font-mono text-xs">ECDSA-P384 VALIDATED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Audit Disclaimers -->
+<div class="mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-space-md text-slate-muted">
+<div class="bg-surface-dark p-space-md rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-lg">lock_clock</span>
+<div>
+<h4 class="font-label-md text-label-md text-pure-white mb-0.5">Session Immutability</h4>
+<p class="font-body-sm text-body-sm leading-relaxed">Idle state timeouts execute automatically after 15 minutes of inactive queue manipulation.</p>
+</div>
+</div>
+<div class="bg-surface-dark p-space-md rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-lg">history_edu</span>
+<div>
+<h4 class="font-label-md text-label-md text-pure-white mb-0.5">Forensic Audit Log</h4>
+<p class="font-body-sm text-body-sm leading-relaxed">All pipeline access attempts, telemetry downloads, and credit memo previews are recorded to WORM storage.</p>
+</div>
+</div>
+<div class="bg-surface-dark p-space-md rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-lg">verified</span>
+<div>
+<h4 class="font-label-md text-label-md text-pure-white mb-0.5">Dual-Control Protocol</h4>
+<p class="font-body-sm text-body-sm leading-relaxed">Credit lines exceeding $25M mandate secondary co-signing by a Designated Underwriting Director.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectRole(role) {
+    const rmBtn = document.getElementById('role-rm-btn');
+    const caBtn = document.getElementById('role-ca-btn');
+    const rmIndicator = document.getElementById('rm-active-indicator');
+    const caIndicator = document.getElementById('ca-active-indicator');
+    const rmRadio = document.getElementById('rm-radio');
+    const caRadio = document.getElementById('ca-radio');
+    const roleInput = document.getElementById('selected-role-input');
+    const badgeDisplay = document.getElementById('active-badge-display');
+    const ctaBtn = document.getElementById('submit-cta');
+
+    roleInput.value = role;
+
+    if (role === 'rm') {
+      rmBtn.classList.remove('opacity-85', 'bg-surface-container-high/60');
+      rmBtn.classList.add('bg-surface-dark-elevated');
+      rmIndicator.classList.remove('bg-transparent');
+      rmIndicator.classList.add('bg-primary-container', 'shadow-[0_0_12px_#02f576]');
+      rmRadio.className = 'w-4 h-4 rounded-full bg-primary-container flex items-center justify-center';
+      rmRadio.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>';
+
+      caBtn.classList.add('opacity-85', 'bg-surface-container-high/60');
+      caBtn.classList.remove('bg-surface-dark-elevated');
+      caIndicator.classList.remove('bg-secondary', 'shadow-[0_0_12px_#c9beff]');
+      caIndicator.classList.add('bg-transparent');
+      caRadio.className = 'w-4 h-4 rounded-full bg-surface-container-lowest flex items-center justify-center';
+      caRadio.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>';
+
+      badgeDisplay.innerText = 'RELATIONSHIP MANAGER';
+      badgeDisplay.className = 'font-label-sm text-label-sm font-bold text-primary-container uppercase tracking-wider';
+    } else {
+      caBtn.classList.remove('opacity-85', 'bg-surface-container-high/60');
+      caBtn.classList.add('bg-surface-dark-elevated');
+      caIndicator.classList.remove('bg-transparent');
+      caIndicator.classList.add('bg-secondary', 'shadow-[0_0_12px_#c9beff]');
+      caRadio.className = 'w-4 h-4 rounded-full bg-secondary flex items-center justify-center';
+      caRadio.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>';
+
+      rmBtn.classList.add('opacity-85', 'bg-surface-container-high/60');
+      rmBtn.classList.remove('bg-surface-dark-elevated');
+      rmIndicator.classList.remove('bg-primary-container', 'shadow-[0_0_12px_#02f576]');
+      rmIndicator.classList.add('bg-transparent');
+      rmRadio.className = 'w-4 h-4 rounded-full bg-surface-container-lowest flex items-center justify-center';
+      rmRadio.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-transparent"></span>';
+
+      badgeDisplay.innerText = 'CREDIT ANALYST (RISK)';
+      badgeDisplay.className = 'font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider';
+    }
+  }
+
+  function toggleSessionValidity() {
+    const checkbox = document.getElementById('session-validity');
+    const box = document.getElementById('session-toggle-box');
+    const check = document.getElementById('session-check-icon');
+    
+    checkbox.checked = !checkbox.checked;
+    
+    if (checkbox.checked) {
+      box.className = 'w-5 h-5 rounded bg-primary-container flex items-center justify-center transition-all';
+      check.classList.remove('hidden');
+    } else {
+      box.className = 'w-5 h-5 rounded bg-surface-container-highest flex items-center justify-center transition-all';
+      check.classList.add('hidden');
+    }
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-cta');
+    const originalContent = btn.innerHTML;
+    
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-lg animate-spin">sync</span><span>Authenticating Token...</span>';
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span><span>Workspace Clearance Granted</span>';
+      btn.classList.add('bg-primary');
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalContent;
+        btn.classList.remove('bg-primary');
+      }, 2500);
+    }, 1200);
+  }
+</script></main></body></html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-container":"#02f576","surface-container-low":"#191c22","primary":"#c9ffcd","secondary-fixed":"#e6deff","on-primary-fixed-variant":"#005323","inverse-on-surface":"#2e3037","slate-muted":"#B0B8C4","on-tertiary":"#432c00","on-error":"#690005","surface":"#10131a","secondary-container":"#4f00f1","surface-bright":"#363940","error-container":"#93000a","surface-dark":"#121722","on-error-container":"#ffdad6","on-secondary-fixed":"#1b0062","primary-fixed":"#65ff90","inverse-primary":"#006d31","surface-variant":"#32353c","tertiary-fixed-dim":"#efbf73","error":"#ffb4ab","secondary":"#c9beff","outline-variant":"#3b4b3c","on-secondary":"#30009b","on-secondary-fixed-variant":"#4600d8","surface-container-high":"#272a31","on-primary-container":"#006b2f","on-primary":"#003916","surface-dark-elevated":"#1A202E","on-secondary-container":"#c5baff","tertiary-fixed":"#ffddae","on-background":"#e1e2eb","primary-fixed-dim":"#00e46d","on-tertiary-fixed":"#281800","pure-white":"#FFFFFF","surface-container-lowest":"#0b0e14","inverse-surface":"#e1e2eb","surface-tint":"#00e46d","on-surface":"#e1e2eb","tertiary-container":"#ffcd80","on-surface-variant":"#bacbb8","secondary-fixed-dim":"#c9beff","on-tertiary-fixed-variant":"#604100","surface-container":"#1d2026","background":"#10131a","surface-container-highest":"#32353c","on-tertiary-container":"#795513","outline":"#849584","surface-dim":"#10131a","on-primary-fixed":"#00210a","tertiary":"#ffefdc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","margin-mobile":"1.25rem","space-xs":"0.25rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter-mobile":"1rem","gutter":"1.5rem","margin":"3rem","space-xl":"2.5rem"},"fontFamily":{"headline-lg-mobile":["Montserrat"],"display-hero-mobile":["Montserrat"],"headline-sm":["Montserrat"],"label-md":["Montserrat"],"body-sm":["Montserrat"],"display-hero":["Montserrat"],"body-lg":["Montserrat"],"body-md":["Montserrat"],"headline-md":["Montserrat"],"label-sm":["Montserrat"],"headline-lg":["Montserrat"]},"fontSize":{"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.015em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg gap-space-sm bg-surface-container-lowest"><div class="w-8 h-8 rounded-lg bg-surface-dark-elevated flex items-center justify-center shadow-[0_0_16px_rgba(2,245,118,0.25)]"><span class="material-symbols-outlined text-primary-container text-[20px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-label-md tracking-wider text-pure-white uppercase font-bold">Kestrel</span><span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-widest text-[10px]">Finance Intake</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-slate-muted">Lending Navigation</div></div><nav class="flex flex-col px-space-sm gap-space-xs" data-active-classes="bg-surface-dark-elevated text-primary font-bold shadow-[inset_2px_0_0_#02f576]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="applications" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Applications</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="documents" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Documents</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="outstanding-items" href="#"><span class="material-symbols-outlined text-[20px]">pending_actions</span><span>Outstanding Items</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-all bg-surface-dark-elevated text-primary font-bold shadow-[inset_2px_0_0_#02f576]" data-path="queue" href="#"><span class="material-symbols-outlined text-[20px]">rule_folder</span><span>Queue</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="metrics" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Metrics / Baseline</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-md text-label-md" data-path="help" href="#"><span class="material-symbols-outlined text-[20px]">help_outline</span><span>Help</span></a></nav></div><div class="p-space-md bg-surface-container-lowest"><div class="bg-surface-dark p-space-sm rounded-lg flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#02f576]"></div><div class="flex flex-col overflow-hidden"><span class="font-label-sm text-label-sm text-pure-white truncate font-semibold">Production Node</span><span class="font-label-sm text-[10px] text-slate-muted tracking-tight truncate">Latency 14ms | Clean</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-lg"><div class="inline-flex items-center bg-surface-container-lowest p-0.5 rounded-lg"><button class="px-space-md py-space-xs rounded-lg font-label-sm text-label-sm text-slate-muted hover:text-pure-white transition-colors">Relationship Manager (RM)</button><button class="px-space-md py-space-xs rounded-lg font-label-sm text-label-sm bg-surface-dark-elevated text-primary-container font-semibold shadow-[0_0_12px_rgba(2,245,118,0.15)]">Credit Analyst</button></div><div class="hidden xl:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-low text-slate-muted font-label-sm text-label-sm"><span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">verified_user</span><span>RBI Compliance Framework v4.2 | 256-bit HSM Encrypted</span></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-pure-white font-semibold leading-tight">Arunachalam V.</span><span class="font-label-sm text-label-sm text-slate-muted leading-tight">Lead Underwriting Analyst</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 px-gutter bg-surface min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Dynamic Top Ambient Aura -->
+<div class="relative w-full overflow-hidden pointer-events-none mb-space-md">
+<div class="absolute -top-32 left-1/4 w-96 h-48 bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="absolute -top-28 right-1/3 w-80 h-40 bg-secondary-container/15 blur-[100px] rounded-full"></div>
+</div>
+<!-- Primary Header & Regulatory Banner -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-lg bg-surface-dark-elevated text-primary-container font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_8px_#02f576] animate-pulse"></span>
+          Underwriting Intake Portal
+        </span>
+<span class="text-slate-muted font-label-sm text-label-sm font-semibold tracking-wider">/</span>
+<span class="text-slate-muted font-label-sm text-label-sm font-semibold tracking-wider">POLICY STAGE 02</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-pure-white tracking-tight">Credit Analyst Intake Queue</h1>
+<p class="font-body-md text-body-md text-slate-muted mt-space-xs">
+        Intake-validated dossiers ready for policy underwriting. Underwriting decision strictly rests with analyst.
+      </p>
+</div>
+<!-- Live Telemetry Status Capsule -->
+<div class="flex items-center gap-space-sm bg-surface-dark p-space-sm rounded-xl shadow-md">
+<div class="w-10 h-10 rounded-lg bg-surface-dark-elevated flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div class="flex flex-col pr-space-sm">
+<span class="font-label-sm text-label-sm text-pure-white font-semibold">Governance Protocol</span>
+<span class="font-label-sm text-[11px] text-slate-muted">Zero-Auto-Decisioning Mandate</span>
+</div>
+</div>
+</div>
+<!-- Operational Metrics & Pipeline Velocity Bento Strip -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Stat 1 -->
+<div class="bg-surface-dark p-space-md rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-0.5 bg-primary-container"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-muted">Ready Queue</span>
+<span class="material-symbols-outlined text-primary-container text-[20px]">fact_check</span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-pure-white">6</span>
+<span class="font-label-md text-label-md text-primary-fixed-dim font-medium">Dossiers</span>
+</div>
+<p class="font-label-sm text-label-sm text-slate-muted mt-space-xs">Complete Dossiers (Ready for Policy Review)</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-slate-muted font-label-sm text-[11px]">
+<span>Checklist Accuracy</span>
+<span class="text-primary-container font-semibold">100% Verified</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-dark p-space-md rounded-xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-0.5 bg-secondary"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-muted">Intake Velocity</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">speed</span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg font-bold text-pure-white">2.1</span>
+<span class="font-label-md text-label-md text-secondary font-medium">hrs</span>
+</div>
+<p class="font-label-sm text-label-sm text-slate-muted mt-space-xs">Avg Turnaround: 2.1 hrs (Intake to Queue)</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-slate-muted font-label-sm text-[11px]">
+<span>SLA Baseline</span>
+<span class="text-pure-white font-semibold">4.0 hrs Threshold</span>
+</div>
+</div>
+<!-- Stat 3: Pipeline Aggregation Sparkline -->
+<div class="bg-surface-dark p-space-md rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-muted">Pipeline Volume</span>
+<span class="material-symbols-outlined text-slate-muted text-[20px]">equalizer</span>
+</div>
+<div class="mt-space-sm flex items-end justify-between gap-space-md">
+<div>
+<div class="font-headline-md text-headline-md font-bold text-pure-white">₹ 2.48 Cr</div>
+<p class="font-label-sm text-label-sm text-slate-muted mt-space-xs">Aggregate Exposure in Queue</p>
+</div>
+<!-- Visual Richness: Inline Sparkline SVG -->
+<svg class="w-24 h-10 text-primary-container shrink-0" fill="none" viewbox="0 0 100 40">
+<path d="M0 32 L20 28 L40 34 L60 16 L80 18 L100 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M0 32 L20 28 L40 34 L60 16 L80 18 L100 4 L100 40 L0 40 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-slate-muted font-label-sm text-[11px]">
+<span>Single Ticket Cap</span>
+<span class="text-pure-white font-semibold">₹ 1.00 Cr Max</span>
+</div>
+</div>
+<!-- Stat 4: Document Verification Node status -->
+<div class="bg-surface-dark p-space-md rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-muted">OCR &amp; Pre-Checks</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] text-primary-container bg-primary-container/10 px-space-xs py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span> SYNCED
+        </span>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-md text-headline-md font-bold text-pure-white">48 / 48</span>
+</div>
+<p class="font-label-sm text-label-sm text-slate-muted mt-space-xs">Artifacts Passed Automated Ingestion</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between text-slate-muted font-label-sm text-[11px]">
+<span>Engine Validation</span>
+<span class="text-pure-white font-semibold">Kestrel Optical v2.8</span>
+</div>
+</div>
+</div>
+<!-- Operational Filter Strip & Search Matrix -->
+<div class="flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md bg-surface-container-low p-space-sm rounded-xl mb-space-md shadow-sm">
+<!-- Filter Tabs -->
+<div class="flex items-center overflow-x-auto gap-space-xs p-1 bg-surface-dark rounded-lg">
+<button class="px-space-md py-space-xs rounded-lg font-label-sm text-label-sm font-semibold bg-surface-dark-elevated text-primary-container shadow-[0_0_12px_rgba(2,245,118,0.15)] flex items-center gap-space-xs whitespace-nowrap">
+<span>Priority Queue</span>
+<span class="bg-primary-container text-surface-container-lowest font-bold px-1.5 py-0.2 rounded-full text-[10px]">6</span>
+</button>
+<button class="px-space-md py-space-xs rounded-lg font-label-sm text-label-sm font-medium text-slate-muted hover:text-pure-white transition-colors whitespace-nowrap">
+        Corporate WC
+      </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-sm text-label-sm font-medium text-slate-muted hover:text-pure-white transition-colors whitespace-nowrap">
+        Term Loans
+      </button>
+<button class="px-space-md py-space-xs rounded-lg font-label-sm text-label-sm font-medium text-slate-muted hover:text-pure-white transition-colors whitespace-nowrap">
+        All Completed
+      </button>
+</div>
+<!-- Quick Utilities -->
+<div class="flex items-center gap-space-sm flex-wrap sm:flex-nowrap">
+<div class="relative flex-1 sm:w-72">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-muted text-[18px]">search</span>
+<input class="w-full bg-surface-dark text-pure-white placeholder-slate-muted text-body-sm font-body-sm rounded-lg pl-9 pr-space-md py-2 focus:outline-none focus:ring-1 focus:ring-primary-container shadow-inner" placeholder="Filter by ref ID, entity name, GSTIN..." type="text"/>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-dark text-slate-muted hover:text-pure-white font-label-sm text-label-sm transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Columns</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-dark text-slate-muted hover:text-pure-white font-label-sm text-label-sm transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+<!-- Primary High-Density Data Table Card Container -->
+<div class="bg-surface-dark rounded-xl shadow-xl overflow-hidden flex flex-col mb-space-lg">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<!-- Table Head -->
+<thead>
+<tr class="bg-surface-container-high text-slate-muted font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-md px-space-lg font-semibold w-48">Application Ref ID</th>
+<th class="py-space-md px-space-md font-semibold min-w-[260px]">Borrower / Corporate Entity</th>
+<th class="py-space-md px-space-md font-semibold text-right min-w-[160px]">Requested Facility</th>
+<th class="py-space-md px-space-md font-semibold min-w-[180px]">Intake Completed</th>
+<th class="py-space-md px-space-md font-semibold min-w-[220px]">Checklist Verification</th>
+<th class="py-space-md px-space-md font-semibold text-center w-36">Status</th>
+<th class="py-space-md px-space-lg font-semibold text-right min-w-[180px]">Policy Action</th>
+</tr>
+</thead>
+<!-- Table Body -->
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Row 1: APP-2026-0018 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary-container tracking-wide group-hover:underline">APP-2026-0018</span>
+<span class="material-symbols-outlined text-[16px] text-slate-muted hover:text-pure-white cursor-pointer" title="Copy Reference">content_copy</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted tracking-tight">Express Ingestion Node</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-pure-white truncate">Sahyadri Speciality Alloys Pvt Ltd</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-dark-elevated text-primary-fixed-dim text-[10px] font-label-sm font-semibold uppercase">P1</span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-muted font-label-sm text-[12px] mt-0.5">
+<span>CIN: U27100MH2012PTC229871</span>
+<span>•</span>
+<span>Pune, MH</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="font-label-md text-label-md font-bold text-pure-white">₹ 65,00,000</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Working Capital CC/OD</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs text-pure-white font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+<span>Today, 11:42 IST</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Ingestion latency: 1.8 hrs</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>8/8 Cleared - 100% Ready</span>
+</div>
+<!-- Checklist micro progress meter -->
+<div class="w-36 h-1.5 bg-surface-dark-elevated rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[11px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#02f576]"></span>
+                COMPLETE
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(2,245,118,0.25)] hover:shadow-[0_0_24px_rgba(2,245,118,0.4)] transition-all" href="#">
+<span>Open for Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 2: APP-2026-0001 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary-container tracking-wide group-hover:underline">APP-2026-0001</span>
+<span class="material-symbols-outlined text-[16px] text-slate-muted hover:text-pure-white cursor-pointer" title="Copy Reference">content_copy</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted tracking-tight">Direct Client Intake</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-pure-white truncate">Sample Applicant Pvt Ltd</span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-muted font-label-sm text-[12px] mt-0.5">
+<span>CIN: U74999KA2018PTC112345</span>
+<span>•</span>
+<span>Bengaluru, KA</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="font-label-md text-label-md font-bold text-pure-white">₹ 18,00,000</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Machinery Term Loan</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs text-pure-white font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+<span>Today, 10:15 IST</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Ingestion latency: 2.3 hrs</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>8/8 Cleared - 100% Ready</span>
+</div>
+<div class="w-36 h-1.5 bg-surface-dark-elevated rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[11px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#02f576]"></span>
+                COMPLETE
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(2,245,118,0.25)] hover:shadow-[0_0_24px_rgba(2,245,118,0.4)] transition-all" href="#">
+<span>Open for Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 3: APP-2026-0007 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary-container tracking-wide group-hover:underline">APP-2026-0007</span>
+<span class="material-symbols-outlined text-[16px] text-slate-muted hover:text-pure-white cursor-pointer" title="Copy Reference">content_copy</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted tracking-tight">RM Assisted Ingestion</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-pure-white truncate">Bharat Biotech Engineering Ltd</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-dark-elevated text-secondary font-label-sm text-[10px] font-semibold uppercase">Healthcare</span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-muted font-label-sm text-[12px] mt-0.5">
+<span>CIN: L24230TG1996PLC025689</span>
+<span>•</span>
+<span>Hyderabad, TS</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="font-label-md text-label-md font-bold text-pure-white">₹ 28,00,000</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Capex Expansion</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs text-pure-white font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+<span>Today, 09:30 IST</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Ingestion latency: 1.4 hrs</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>8/8 Cleared - 100% Ready</span>
+</div>
+<div class="w-36 h-1.5 bg-surface-dark-elevated rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[11px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#02f576]"></span>
+                COMPLETE
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(2,245,118,0.25)] hover:shadow-[0_0_24px_rgba(2,245,118,0.4)] transition-all" href="#">
+<span>Open for Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 4: APP-2026-0022 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary-container tracking-wide group-hover:underline">APP-2026-0022</span>
+<span class="material-symbols-outlined text-[16px] text-slate-muted hover:text-pure-white cursor-pointer" title="Copy Reference">content_copy</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted tracking-tight">Express Ingestion Node</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-pure-white truncate">Navrang Textiles Ltd</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-dark-elevated text-primary-fixed-dim text-[10px] font-label-sm font-semibold uppercase">P1</span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-muted font-label-sm text-[12px] mt-0.5">
+<span>CIN: L17110GJ1992PLC017845</span>
+<span>•</span>
+<span>Surat, GJ</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="font-label-md text-label-md font-bold text-pure-white">₹ 42,00,000</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Raw Material Supplier LC</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs text-pure-white font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+<span>Today, 08:50 IST</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Ingestion latency: 1.9 hrs</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>8/8 Cleared - 100% Ready</span>
+</div>
+<div class="w-36 h-1.5 bg-surface-dark-elevated rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[11px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#02f576]"></span>
+                COMPLETE
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(2,245,118,0.25)] hover:shadow-[0_0_24px_rgba(2,245,118,0.4)] transition-all" href="#">
+<span>Open for Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 5: APP-2026-0034 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary-container tracking-wide group-hover:underline">APP-2026-0034</span>
+<span class="material-symbols-outlined text-[16px] text-slate-muted hover:text-pure-white cursor-pointer" title="Copy Reference">content_copy</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted tracking-tight">Direct Client Intake</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-pure-white truncate">Kaveri Agro Commodities Corp</span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-muted font-label-sm text-[12px] mt-0.5">
+<span>CIN: U01111TN2015PTC099231</span>
+<span>•</span>
+<span>Coimbatore, TN</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="font-label-md text-label-md font-bold text-pure-white">₹ 55,00,000</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Warehouse Receipt Credit</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs text-pure-white font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+<span>Today, 08:12 IST</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Ingestion latency: 2.5 hrs</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>8/8 Cleared - 100% Ready</span>
+</div>
+<div class="w-36 h-1.5 bg-surface-dark-elevated rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[11px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#02f576]"></span>
+                COMPLETE
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(2,245,118,0.25)] hover:shadow-[0_0_24px_rgba(2,245,118,0.4)] transition-all" href="#">
+<span>Open for Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 6: APP-2026-0049 -->
+<tr class="hover:bg-surface-container-high/60 transition-colors group">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-primary-container tracking-wide group-hover:underline">APP-2026-0049</span>
+<span class="material-symbols-outlined text-[16px] text-slate-muted hover:text-pure-white cursor-pointer" title="Copy Reference">content_copy</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted tracking-tight">Fintech Partner Channel</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-pure-white truncate">Zenith Polymers &amp; Composites LLP</span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-muted font-label-sm text-[12px] mt-0.5">
+<span>LLPIN: AAB-8910</span>
+<span>•</span>
+<span>Vadodara, GJ</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<div class="font-label-md text-label-md font-bold text-pure-white">₹ 40,00,000</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Export Packing Credit</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex items-center gap-space-xs text-pure-white font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary-container">schedule</span>
+<span>Yesterday, 19:20 IST</span>
+</div>
+<span class="font-label-sm text-[11px] text-slate-muted">Ingestion latency: 2.1 hrs</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-space-xs text-primary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>8/8 Cleared - 100% Ready</span>
+</div>
+<div class="w-36 h-1.5 bg-surface-dark-elevated rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md text-center whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-[11px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_#02f576]"></span>
+                COMPLETE
+              </span>
+</td>
+<td class="py-space-md px-space-lg text-right whitespace-nowrap">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-primary text-surface-container-lowest font-label-md text-label-md font-bold shadow-[0_0_16px_rgba(2,245,118,0.25)] hover:shadow-[0_0_24px_rgba(2,245,118,0.4)] transition-all" href="#">
+<span>Open for Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination & Operational Summary Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between px-space-lg py-space-md bg-surface-container-low text-slate-muted font-label-sm text-label-sm gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="text-pure-white font-semibold">Showing 6 of 6 dossiers</span>
+<span>•</span>
+<span>Automated Pre-flight complete</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-1.5 rounded bg-surface-dark text-slate-muted/40 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-space-sm py-1 rounded bg-surface-dark-elevated text-pure-white font-semibold">Page 1 of 1</span>
+<button class="p-1.5 rounded bg-surface-dark text-slate-muted/40 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mandatory Governance & Security Footnote (CRITICAL RULE VERIFICATION) -->
+<div class="rounded-xl bg-surface-dark p-space-lg shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-dark-elevated text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-pure-white">Regulatory Underwriting Gate</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-sm text-[10px] font-bold">STRICT POLICY</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted mt-1 max-w-4xl">
+          Pursuant to Kestrel Governance protocols and RBI Master Directions on Corporate Lending (RBI/2023-24/LND-09), all credit exposure authorizations require comprehensive human adjudication. The intake queue displays automated document parity check completion only. System-generated approval or rejection is strictly disabled at the intake layer.
+        </p>
+</div>
+</div>
+<!-- HSM Cryptographic Seal -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-lg shrink-0 self-stretch md:self-auto">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">enhanced_encryption</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-pure-white">256-bit HSM Encrypted</span>
+<span class="font-label-sm text-[10px] text-slate-muted tracking-tight">Audit Trail: KST-AUD-99824-V4</span>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Filter Feedback (Vanilla JS) -->
+<script>
+    document.querySelectorAll('input[type="text"]').forEach(input => {
+      input.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const rows = document.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+          const text = row.innerText.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</div></main></div></body></html>

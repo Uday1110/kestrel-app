@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><title>Kestrel Finance</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#bacbb8", "on-tertiary-fixed-variant": "#604100", "surface-container-highest": "#32353c", "tertiary-fixed": "#ffddae", "surface-container": "#1d2026", "surface": "#10131a", "surface-bright": "#363940", "on-secondary": "#30009b", "secondary-fixed-dim": "#c9beff", "secondary-fixed": "#e6deff", "on-error-container": "#ffdad6", "on-primary-fixed-variant": "#005323", "primary-fixed": "#65ff90", "secondary-container": "#4f00f1", "inverse-on-surface": "#2e3037", "error": "#ffb4ab", "on-primary-fixed": "#00210a", "pure-white": "#FFFFFF", "surface-dark-elevated": "#1A202E", "surface-tint": "#00e46d", "inverse-surface": "#e1e2eb", "on-tertiary-fixed": "#281800", "on-background": "#e1e2eb", "on-tertiary-container": "#795513", "outline": "#849584", "surface-dim": "#10131a", "primary-container": "#02f576", "tertiary": "#ffefdc", "primary-fixed-dim": "#00e46d", "tertiary-container": "#ffcd80", "on-secondary-fixed": "#1b0062", "surface-dark": "#121722", "on-surface": "#e1e2eb", "error-container": "#93000a", "on-error": "#690005", "surface-container-high": "#272a31", "surface-container-lowest": "#0b0e14", "surface-variant": "#32353c", "on-tertiary": "#432c00", "outline-variant": "#3b4b3c", "on-secondary-container": "#c5baff", "slate-muted": "#B0B8C4", "surface-container-low": "#191c22", "on-primary-container": "#006b2f", "secondary": "#c9beff", "on-secondary-fixed-variant": "#4600d8", "primary": "#c9ffcd", "tertiary-fixed-dim": "#efbf73", "on-primary": "#003916", "background": "#10131a", "inverse-primary": "#006d31" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter": "1.5rem", "space-xl": "2.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xs": "0.25rem", "margin": "3rem", "margin-mobile": "1.25rem" }, "fontFamily": { "label-md": ["Montserrat"], "display-hero": ["Montserrat"], "headline-lg": ["Montserrat"], "display-hero-mobile": ["Montserrat"], "body-md": ["Montserrat"], "headline-sm": ["Montserrat"], "body-lg": ["Montserrat"], "label-sm": ["Montserrat"], "body-sm": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "headline-md": ["Montserrat"] }, "fontSize": { "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen selection:bg-primary-container selection:text-surface"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight leading-tight truncate max-w-[190px]">Document Verification Inspector</span><span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-widest text-[9px]">INTERNAL USE ONLY - INTAKE</span></div></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full px-gutter-mobile py-space-sm space-y-space-md">
+<!-- Top Drawer Header Area -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex flex-col min-w-0 pr-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-slate-muted uppercase tracking-wider">Automated Intake Pipeline</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-pure-white truncate">Document Intake Validation</h2>
+</div>
+<button aria-label="Dismiss panel" class="w-10 h-10 rounded-full bg-surface-container-high hover:bg-surface-bright text-slate-muted hover:text-pure-white flex items-center justify-center shrink-0 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Status & Engine Telemetry Pill -->
+<div class="flex items-center justify-between bg-surface-container p-space-sm rounded-xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-lg bg-error-container/30 text-error font-label-sm text-label-sm tracking-wide uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-error">flag</span>
+        Flagged for Review
+      </span>
+<span class="text-slate-muted font-label-sm text-label-sm">• Checksum Hit</span>
+</div>
+<div class="flex items-center gap-1 text-slate-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-container">speed</span>
+<span>420ms</span>
+</div>
+</div>
+<!-- File Identity Module & Inline Preview Card -->
+<div class="bg-surface-container p-space-md rounded-xl space-y-space-md relative overflow-hidden">
+<div class="flex gap-space-md items-start">
+<!-- Thumbnail with PDF indicator and realistic document graphic placeholder -->
+<div class="relative w-20 h-24 rounded-lg bg-surface-container-lowest shrink-0 overflow-hidden shadow-md flex flex-col justify-between p-2">
+<div class="flex items-center justify-between">
+<span class="px-1 py-0.5 bg-error/20 text-error font-label-sm text-label-sm rounded uppercase text-[9px] font-bold">PDF</span>
+<span class="material-symbols-outlined text-[14px] text-slate-muted">verified</span>
+</div>
+<div class="space-y-1 my-auto">
+<div class="w-full h-1 bg-surface-bright rounded"></div>
+<div class="w-3/4 h-1 bg-surface-bright rounded"></div>
+<div class="w-1/2 h-1 bg-surface-bright rounded"></div>
+</div>
+<span class="font-label-sm text-label-sm text-slate-muted text-[10px] text-center">6 Pages</span>
+</div>
+<!-- File Details -->
+<div class="flex flex-col min-w-0 flex-1 space-y-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded bg-secondary-container/20 text-secondary-fixed font-label-sm text-label-sm font-semibold tracking-wider uppercase text-[10px]">
+            Schedule Confirmed
+          </span>
+<span class="text-slate-muted font-body-sm text-body-sm">2.8 MB</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-pure-white truncate leading-snug" title="sanction_letter_pnb_2024.pdf">
+          sanction_letter_pnb_2024.pdf
+        </h3>
+<p class="font-body-sm text-body-sm text-slate-muted leading-relaxed">
+          Type: <span class="text-on-surface font-semibold">Sanction Letter / Facility Schedule</span>
+</p>
+<div class="pt-1 flex items-center gap-1 text-slate-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-container">psychology</span>
+<span>Confidence: 99.4% (Metadata extraction)</span>
+</div>
+</div>
+</div>
+<!-- Processing Completion Meter -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-slate-muted">Verification Pipeline</span>
+<span class="text-primary-container font-semibold">100% (4 of 4 Checks Evaluated)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+<!-- Plain-Language Action Guidance Banner -->
+<div class="bg-surface-container-high p-space-md rounded-xl space-y-space-xs relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-error-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-on-error text-[18px]">warning</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 space-y-1">
+<span class="font-label-md text-label-md text-pure-white uppercase tracking-wider">Action Required</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal">
+          Resolve the duplicate conflict or replace the document with the verified sanctioned sanction letter.
+        </p>
+</div>
+</div>
+</div>
+<!-- Interactive Rule Validation Checklist -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-md text-label-md text-pure-white uppercase tracking-wider">Compliance Rules Breakdown</span>
+<span class="font-label-sm text-label-sm text-slate-muted">3 Passed • 1 Conflict</span>
+</div>
+<!-- Rule 1: Text Legibility (PASS) -->
+<div class="bg-surface-container p-space-md rounded-xl transition-all duration-200 hover:bg-surface-container-high">
+<div class="flex items-start gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-primary-fixed-dim/20 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 space-y-0.5">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-pure-white truncate">File Readability &amp; Text Legibility</span>
+<span class="text-primary-container font-label-sm text-label-sm font-semibold uppercase">Passed</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted leading-relaxed">
+            Average OCR resolution 300 DPI, clean digital print with high optical clarity.
+          </p>
+</div>
+</div>
+</div>
+<!-- Rule 2: Duplicate Repository Check (FAIL) - Highlighted Card -->
+<div class="bg-surface-container-high p-space-md rounded-xl space-y-space-sm relative">
+<div class="flex items-start gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-error-container/30 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-error text-[18px]">cancel</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 space-y-1">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-pure-white truncate">Duplicate Check against Repository</span>
+<span class="text-error font-label-sm text-label-sm font-semibold uppercase">Failed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+            This exact document checksum was previously uploaded on <span class="font-semibold text-pure-white">14 Jan 2026</span> under borrower group entity <span class="text-secondary-fixed font-semibold underline decoration-secondary-fixed/50">APP-2025-9012</span>.
+          </p>
+<!-- Contextual quick link -->
+<div class="pt-space-xs">
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary-container hover:underline" type="button">
+<span>View Conflicting Loan Application</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Rule 3: Document Type Specification Match (PASS) -->
+<div class="bg-surface-container p-space-md rounded-xl transition-all duration-200 hover:bg-surface-container-high">
+<div class="flex items-start gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-primary-fixed-dim/20 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 space-y-0.5">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-pure-white truncate">Document Type Specification Match</span>
+<span class="text-primary-container font-label-sm text-label-sm font-semibold uppercase">Passed</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted leading-relaxed">
+            Matches required <span class="text-pure-white">Sanction letter of existing credit facilities</span> schedule format.
+          </p>
+</div>
+</div>
+</div>
+<!-- Rule 4: Page Limit & Integrity Validation (PASS) -->
+<div class="bg-surface-container p-space-md rounded-xl transition-all duration-200 hover:bg-surface-container-high">
+<div class="flex items-start gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-primary-fixed-dim/20 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 space-y-0.5">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-pure-white truncate">Page Limit &amp; Integrity Validation</span>
+<span class="text-primary-container font-label-sm text-label-sm font-semibold uppercase">Passed</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-muted leading-relaxed">
+            6 pages detected, well within allowable 20-page threshold. No corrupted pages or broken xref tables.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Action Tray -->
+<div class="pt-space-xs pb-space-lg space-y-space-sm">
+<!-- Highlighted Primary Action: Replace File -->
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary-container font-headline-sm text-body-lg font-bold py-3.5 px-space-md rounded-lg flex items-center justify-center gap-space-sm shadow-lg transition-transform active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Replace File</span>
+</button>
+<!-- Secondary and Auxiliary Options -->
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="w-full bg-surface-container hover:bg-surface-container-high text-pure-white font-label-md text-label-md py-3 px-space-sm rounded-lg flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-slate-muted">visibility</span>
+<span class="truncate">View Original PDF</span>
+</button>
+<button class="w-full bg-surface-container-lowest hover:bg-surface-container text-slate-muted hover:text-error font-label-md text-label-md py-3 px-space-sm rounded-lg flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Cancel</span>
+</button>
+</div>
+</div>
+</div></main></body></html>

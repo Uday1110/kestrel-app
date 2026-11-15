@@ -1,0 +1,225 @@
+// Prisma schema for Kestrel Finance corporate-lending intake
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id                 String              @id @default(cuid())
+  email              String              @unique
+  name               String
+  role               String              // "RM" | "ANALYST" | "ADMIN"
+  title              String
+  department         String
+  avatarUrl          String?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  assignedApplications Application[]     @relation("AssignedRM")
+  analyzedApplications Application[]     @relation("AssignedAnalyst")
+  uploadedDocuments    Document[]        @relation("UploadedBy")
+  requestedItems       OutstandingItem[] @relation("RequestedBy")
+  resolvedItems        OutstandingItem[] @relation("ResolvedBy")
+  analystNotes         AnalystNote[]
+  auditEvents          AuditEvent[]
+}
+
+model ApplicantBusiness {
+  id                 String              @id @default(cuid())
+  legalName          String
+  tradeName          String?
+  cin                String              @unique
+  pan                String
+  gstin              String
+  incorporationDate  String
+  industrySector     String
+  registeredAddress  String
+  city               String
+  state              String
+  pincode            String
+  contactName        String
+  contactEmail       String
+  contactPhone       String
+  riskBand           String              @default("A+")
+  turnoverCr         Float               @default(48.25)
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+
+  applications       Application[]
+}
+
+model Application {
+  id                     String              @id @default(cuid())
+  referenceNumber        String              @unique // e.g. "APP-2026-0001"
+  businessId             String
+  assignedRmId           String
+  assignedAnalystId      String?
+  facilityType           String              // "WORKING_CAPITAL" | "TERM_LOAN" | "MACHINERY_LOAN" | "CONSORTIUM_FACILITY"
+  facilityAmount         Float               // In INR (e.g. 1800000 = 18L, 1425000000 = 142.5Cr)
+  tenorMonths            Int                 @default(36)
+  purpose                String
+  status                 String              // "DRAFT" | "DOCS_IN_PROGRESS" | "SUBMITTED" | "UNDER_REVIEW" | "INFO_REQUESTED" | "ACKNOWLEDGED" | "APPROVED" | "REJECTED"
+  intakeStage            String              @default("GATE_1_RM_INTAKE") // GATE_1_RM_INTAKE, GATE_2_AI_CHECKSUM, GATE_3_BORROWER_CHASING, GATE_4_UNDERWRITING_DESK, GATE_5_SANCTION_COMMITTEE
+  intakeReadinessPercent Float               @default(50.0)
+  targetDisbursalDate    DateTime?
+  submittedAt            DateTime?
+  underwritingStartedAt  DateTime?
+  finalDecisionAt        DateTime?
+  finalDecision          String?             // "APPROVED" | "REJECTED" | "SANCTION_PROCEEDED"
+  decisionReason         String?
+  createdAt              DateTime            @default(now())
+  updatedAt              DateTime            @updatedAt
+
+  business               ApplicantBusiness   @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  assignedRm             User                @relation("AssignedRM", fields: [assignedRmId], references: [id])
+  assignedAnalyst        User?               @relation("AssignedAnalyst", fields: [assignedAnalystId], references: [id])
+
+  checklistItems         ChecklistItem[]
+  documents              Document[]
+  outstandingItems       OutstandingItem[]
+  financialExtractions   FinancialExtraction[]
+  analystNotes           AnalystNote[]
+  statusHistory          ApplicationStatusHistory[]
+  auditEvents            AuditEvent[]
+}
+
+model ApplicationStatusHistory {
+  id             String      @id @default(cuid())
+  applicationId  String
+  fromStatus     String?
+  toStatus       String
+  changedByUserId String?
+  changedByRole  String
+  note           String?
+  createdAt      DateTime    @default(now())
+
+  application    Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+}
+
+model ChecklistItem {
+  id               String       @id @default(cuid())
+  applicationId    String
+  itemIndex        Int
+  category         String       // "FINANCIAL_STATEMENTS" | "BANKING" | "REGULATORY_TAX" | "LEGAL_CONSTITUTIONAL" | "SANCTION_LETTERS"
+  title            String
+  specification    String
+  mandatory        Boolean      @default(true)
+  status           String       @default("MISSING") // "CLEARED" | "ATTENTION" | "MISSING" | "WAIVED"
+  flagReason       String?
+  documentId       String?
+  verifiedAt       DateTime?
+  verifiedByUserId String?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  application      Application  @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  document         Document?    @relation(fields: [documentId], references: [id])
+}
+
+model Document {
+  id                 String           @id @default(cuid())
+  applicationId      String
+  fileName           String
+  originalName       String
+  fileSize           Int              // in bytes
+  mimeType           String
+  fileHash           String           // SHA256 checksum
+  storagePath        String           // relative path inside storage/documents/
+  category           String           // "AUDITED_FINANCIALS" | "BANK_STATEMENTS" | "GST_RETURNS" | "ITR_FILINGS" | "SANCTION_LETTER" | "BOARD_RESOLUTION" | "KYC_DOCUMENT"
+  pageCount          Int?             @default(1)
+  source             String           @default("RM Intake Terminal")
+  validationStatus   String           @default("VALIDATED") // "VALIDATED" | "FLAGGED" | "FAILED" | "PENDING_SCAN"
+  validationDetails  String?          // JSON text of check results
+  ocrExtractedData   String?          // JSON text of OCR results
+  uploadedByUserId   String
+  uploadedAt         DateTime         @default(now())
+  isArchived         Boolean          @default(false)
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  application        Application      @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  uploadedBy         User             @relation("UploadedBy", fields: [uploadedByUserId], references: [id])
+  checklistItems     ChecklistItem[]
+  outstandingItems   OutstandingItem[] @relation("ResolvedDoc")
+}
+
+model OutstandingItem {
+  id                   String       @id @default(cuid())
+  applicationId        String
+  title                String
+  description          String
+  category             String
+  severity             String       @default("STANDARD") // "CRITICAL" | "STANDARD" | "LOW"
+  status               String       @default("OPEN") // "OPEN" | "RESOLVED" | "WAIVED"
+  daysOutstanding      Int          @default(0)
+  requestedByUserId    String
+  resolvedByUserId     String?
+  resolvedAt           DateTime?
+  lastContactedChannel String?      // "WHATSAPP" | "EMAIL" | "SMS" | "PHONE"
+  lastContactedAt      DateTime?
+  resolutionNote       String?
+  resolvedDocumentId   String?
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+
+  application          Application  @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  requestedBy          User         @relation("RequestedBy", fields: [requestedByUserId], references: [id])
+  resolvedBy           User?        @relation("ResolvedBy", fields: [resolvedByUserId], references: [id])
+  resolvedDocument     Document?    @relation("ResolvedDoc", fields: [resolvedDocumentId], references: [id])
+}
+
+model FinancialExtraction {
+  id                 String       @id @default(cuid())
+  applicationId      String
+  metricKey          String       // "TOTAL_REVENUE" | "OPERATING_EBITDA" | "CLOSING_BANK_BALANCE" | "DSCR" | "CURRENT_RATIO" | "GST_RECONCILIATION"
+  label              String
+  extractedValue     String
+  numericValue       Float?
+  unit               String       @default("INR")
+  sourceDocumentName String?
+  sourceCitation     String?      // e.g. "Page 4, line 12 (audited_finances.pdf)"
+  confidence         Float        @default(0.994)
+  status             String       @default("PENDING") // "ACCEPTED" | "EDITED" | "REJECTED" | "PENDING"
+  editedValue        String?
+  analystComment     String?
+  reconciledByUserId String?
+  reconciledAt       DateTime?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+
+  application        Application  @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+}
+
+model AnalystNote {
+  id             String       @id @default(cuid())
+  applicationId  String
+  authorId       String
+  title          String
+  content        String
+  category       String       @default("GENERAL_OBSERVATION") // "GENERAL_OBSERVATION" | "FINANCIAL_SPREAD" | "RISK_NOTE" | "COMPLIANCE"
+  isResolved     Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  application    Application  @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  author         User         @relation(fields: [authorId], references: [id])
+}
+
+model AuditEvent {
+  id             String       @id @default(cuid())
+  applicationId  String?
+  userId         String?
+  userRole       String
+  action         String
+  summary        String
+  metadata       String?      // JSON text
+  ipAddress      String?
+  timestamp      DateTime     @default(now())
+
+  application    Application? @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  user           User?        @relation(fields: [userId], references: [id])
+}

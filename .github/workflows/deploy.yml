@@ -9,6 +9,7 @@ on:
 
 env:
   GCP_REGION: asia-south1
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID || 'slabspro-slabsuser25' }}
   SERVICE_NAME: kestrel-finance
   REPOSITORY_NAME: kestrel-repo
 
@@ -56,14 +57,14 @@ jobs:
 
       - name: Build and Tag Docker Image
         run: |
-          IMAGE_URI="${{ env.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.SERVICE_NAME }}"
+          IMAGE_URI="${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.SERVICE_NAME }}"
           docker build \
             -t "${IMAGE_URI}:${{ github.sha }}" \
             -t "${IMAGE_URI}:latest" .
 
       - name: Push Docker Image to Artifact Registry
         run: |
-          IMAGE_URI="${{ env.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.SERVICE_NAME }}"
+          IMAGE_URI="${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.SERVICE_NAME }}"
           docker push "${IMAGE_URI}:${{ github.sha }}"
           docker push "${IMAGE_URI}:latest"
 
@@ -72,7 +73,7 @@ jobs:
         with:
           service: ${{ env.SERVICE_NAME }}
           region: ${{ env.GCP_REGION }}
-          image: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.SERVICE_NAME }}:${{ github.sha }}
+          image: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.SERVICE_NAME }}:${{ github.sha }}
           flags: |
             --allow-unauthenticated
             --port=3000

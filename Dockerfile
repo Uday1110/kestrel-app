@@ -18,6 +18,8 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 RUN npx prisma generate
+RUN if [ ! -f prisma/dev.db ]; then npx prisma db push && npx tsx prisma/seed.ts; fi
+RUN cp prisma/dev.db ./dev.db || true
 RUN npm run build
 
 # Stage 3: Production Runner
@@ -36,8 +38,9 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 
-# Copy pre-seeded database and document repository
-COPY dev.db ./dev.db
+# Copy pre-seeded database and document repository from builder
+COPY --from=builder /app/prisma/dev.db ./dev.db
+COPY --from=builder /app/prisma/dev.db ./prisma/dev.db
 COPY storage ./storage
 
 # Copy entrypoint script

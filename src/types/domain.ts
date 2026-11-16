@@ -1,4 +1,4 @@
-export type UserRole = "RM" | "ANALYST" | "ADMIN";
+export type UserRole = "RM" | "ANALYST" | "ADMIN" | "OWNER";
 
 export interface UserSession {
   id: string;
@@ -105,4 +105,163 @@ export interface DashboardMetrics {
     inProgress: number;
     approved: number;
   };
+}
+
+export interface UrgentException {
+  id: string;
+  title: string;
+  severity: "CRITICAL" | "HIGH" | "MEDIUM";
+  category: "POLICY_REVIEW" | "UNRESOLVED_CHASE" | "SOD_CONFLICT" | "SYSTEM_ALERT";
+  description: string;
+  source: string;
+  actionRequired: string;
+}
+
+export interface OwnerOverviewMetrics {
+  throughput: number;
+  automationStpRate: number;
+  manualHandlingRate: number;
+  errorRate: number;
+  averageCycleDays: number;
+  openAuditFindings: number;
+  activePipelineCr: number;
+  checksumIntegrityPct: number;
+  lastUpdated: string;
+  freshnessStatus: "FRESH" | "STALE" | "ERROR";
+  urgentExceptions: UrgentException[];
+}
+
+export interface GovernancePolicyRecord {
+  id: string;
+  name: string;
+  scope: string;
+  version: string;
+  owner: string;
+  approvingAuthority: string | null;
+  approvalDate: string | null;
+  lastReviewDate: string | null;
+  nextReviewDue: string | null;
+  status: "COMPLIANT" | "REVIEW_OVERDUE" | "MISSING_APPROVAL_RECORD";
+  enforcementMode: "AUTOMATED_STRICT" | "HUMAN_MANDATORY";
+}
+
+export interface ThresholdSetting {
+  key: string;
+  label: string;
+  currentValue: string | number;
+  unit: string;
+  description: string;
+  changeHistory: {
+    id: string;
+    changedBy: string;
+    changedAt: string;
+    previousValue: string;
+    newValue: string;
+    justification: string;
+  }[];
+}
+
+export interface AccessOverviewRecord {
+  userId: string;
+  name: string;
+  role: UserRole;
+  department: string;
+  permissions: string[];
+  hasConflictingPrivilege: boolean;
+  conflictReason?: string;
+}
+
+export interface CaseTraceStep {
+  name: string;
+  stage: string;
+  status: "COMPLETED" | "IN_PROGRESS" | "FLAGGED" | "PENDING";
+  latencyMs: number;
+  latencyDisplay: string;
+  confidence?: number;
+  retries: number;
+  manualRouted: boolean;
+  timestamp: string;
+}
+
+export interface CaseTrace {
+  applicationId: string;
+  referenceNumber: string;
+  borrowerNameMasked: string;
+  cinMasked: string;
+  panMasked: string;
+  contactEmailMasked: string;
+  contactPhoneMasked: string;
+  facilityType: string;
+  facilityAmountCr: number;
+  submittedAt: string;
+  currentStage: string;
+  outcome: "APPROVED" | "UNDER_REVIEW" | "REJECTED" | "FLAGGED";
+  isManualRouted: boolean;
+  steps: CaseTraceStep[];
+}
+
+export interface StructuredLogEntry {
+  id: string;
+  timestamp: string;
+  sourceSystem: string;
+  level: "ERROR" | "WARN" | "INFO";
+  action: string;
+  message: string;
+  detailsMasked: string;
+  retries: number;
+  retentionPolicy: string;
+}
+
+export interface AlertRuleConfig {
+  id: string;
+  name: string;
+  metric: string;
+  operator: ">" | "<" | ">=";
+  threshold: number;
+  unit: string;
+  currentValue: number;
+  status: "OK" | "TRIGGERED";
+  notificationTarget: string;
+  lastTriggeredAt: string | null;
+}
+
+export interface CostCategoryDetail {
+  amountInr: number;
+  pct: number;
+  label: string;
+  isMeasured: boolean;
+  basis: string;
+}
+
+export interface VendorTolerance {
+  vendorName: string;
+  service: string;
+  unitCost: number;
+  unitCostTolerance: number;
+  unit: string;
+  exceedsTolerance: boolean;
+  status: "WITHIN_BUDGET" | "EXCEEDS_TOLERANCE";
+}
+
+export interface MonthlyProjection {
+  month: string;
+  volume: number;
+  projectedCostInr: number;
+  actualCostInr?: number;
+}
+
+export interface CostAnalytics {
+  period: string;
+  totalMonthlyCostInr: number;
+  costPerTransactionInr: number;
+  costPerCompletedOutcomeInr: number;
+  categories: {
+    compute: CostCategoryDetail;
+    storage: CostCategoryDetail;
+    thirdParty: CostCategoryDetail;
+    supportEffort: CostCategoryDetail;
+  };
+  vendorTolerances: VendorTolerance[];
+  monthlyProjections: MonthlyProjection[];
+  disclaimer: string;
 }

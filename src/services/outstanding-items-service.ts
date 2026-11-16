@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { OutreachChannel, OutstandingItemSeverity, UserSession } from "@/types/domain";
+import { getPromptToneConfig } from "@/services/prompt-config-service";
 
 export async function listOutstandingItems(options?: {
   applicationId?: string;
@@ -111,6 +112,22 @@ export async function dispatchBorrowerChase(
 
   if (!item) throw new Error("Outstanding item not found");
 
+  const promptConfig = await getPromptToneConfig();
+  const template =
+    channel === "WHATSAPP"
+      ? promptConfig.outreach.whatsappTemplate
+      : channel === "SMS"
+      ? promptConfig.outreach.smsTemplate
+      : promptConfig.outreach.emailPrompt;
+
+  const resolvedMessage = (customNote && customNote.trim().length > 0)
+    ? customNote
+    : template
+        .replace(/{contactName}/g, item.application.business.contactName)
+        .replace(/{legalName}/g, item.application.business.legalName)
+        .replace(/{referenceNumber}/g, item.application.referenceNumber)
+        .replace(/{title}/g, item.title);
+
   const updated = await prisma.outstandingItem.update({
     where: { id: itemId },
     data: {
@@ -125,7 +142,12 @@ export async function dispatchBorrowerChase(
       userId: currentUser.id,
       userRole: currentUser.role,
       action: "BORROWER_CHASE_DISPATCHED",
-      summary: `Dispatched ${channel} chase to ${item.application.business.contactName} (${item.application.business.legalName}) for "${item.title}". Note: ${customNote || "Automated reminder link"}`,
+      summary: `Dispatched ${channel} chase (${promptConfig.outreach.tone}) to ${item.application.business.contactName} (${item.application.business.legalName}) for "${item.title}". Content: ${resolvedMessage}`,
+      metadata: JSON.stringify({
+        channel,
+        tone: promptConfig.outreach.tone,
+        message: resolvedMessage,
+      }),
     },
   });
 

@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const loginSchema = z.object({
   staffId: z.string().min(1, "Staff ID or corporate email is required"),
-  role: z.enum(["RM", "ANALYST"]),
+  role: z.enum(["RM", "ANALYST", "OWNER"]),
   otpToken: z.string().min(6, "Valid OTP or Entrust code is required").max(10),
   extendedSession: z.boolean().optional().default(true),
 });

@@ -11,7 +11,14 @@ interface SidebarProps {
 export function Sidebar({ currentRole }: SidebarProps) {
   const pathname = usePathname();
 
-  const navItems = [
+  const ownerItem = {
+    label: "Owner Governance",
+    href: "/owner",
+    icon: "security",
+    activeMatch: (p: string) => p.startsWith("/owner"),
+  };
+
+  const baseNavItems = [
     {
       label: "Applications",
       href: "/applications",
@@ -49,6 +56,8 @@ export function Sidebar({ currentRole }: SidebarProps) {
       activeMatch: (p: string) => p.startsWith("/financial-assistant"),
     },
   ];
+
+  const navItems = currentRole === "OWNER" ? [ownerItem, ...baseNavItems] : baseNavItems;
 
   return (
     <aside className="hidden lg:flex fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-40 flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] border-r border-surface-container-high/40">

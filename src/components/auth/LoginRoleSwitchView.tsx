@@ -18,9 +18,12 @@ export function LoginRoleSwitchView() {
     if (role === "RM") {
       setStaffId("rm.sharma@corporate.kestrel.internal");
       setOtpToken("94821034");
-    } else {
+    } else if (role === "ANALYST") {
       setStaffId("analyst.williams@corporate.kestrel.internal");
       setOtpToken("88219401");
+    } else if (role === "OWNER") {
+      setStaffId("owner.governance@corporate.kestrel.internal");
+      setOtpToken("71940285");
     }
   };
 
@@ -113,7 +116,7 @@ export function LoginRoleSwitchView() {
               </p>
 
               {/* Interactive Role Tiles */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-space-md">
                 {/* Tile 1: Relationship Manager */}
                 <button
                   type="button"
@@ -164,7 +167,7 @@ export function LoginRoleSwitchView() {
                       <span className="material-symbols-outlined text-sm text-primary-container">
                         check_circle
                       </span>
-                      Borrower File Aggregation
+                      Borrower Collation
                     </li>
                     <li className="flex items-center gap-1.5 text-xs text-slate-muted">
                       <span className="material-symbols-outlined text-sm text-primary-container">
@@ -225,13 +228,74 @@ export function LoginRoleSwitchView() {
                       <span className="material-symbols-outlined text-sm text-secondary">
                         verified_user
                       </span>
-                      Forensic Doc Inspection
+                      Forensic Inspection
                     </li>
                     <li className="flex items-center gap-1.5 text-xs text-slate-muted">
                       <span className="material-symbols-outlined text-sm text-secondary">
                         verified_user
                       </span>
-                      Structured Data Recalibration
+                      Financial Spreads
+                    </li>
+                  </ul>
+                </button>
+
+                {/* Tile 3: System Owner & Governance */}
+                <button
+                  type="button"
+                  onClick={() => handleRoleSelect("OWNER")}
+                  className={`text-left p-space-md rounded-xl shadow-lg transition-all duration-200 relative overflow-hidden group border ${
+                    selectedRole === "OWNER"
+                      ? "bg-surface-dark-elevated border-primary-container/60 ring-1 ring-primary-container/40"
+                      : "bg-surface-container-high/40 border-surface-container-high/30 opacity-80 hover:opacity-100"
+                  }`}
+                >
+                  <div
+                    className={`absolute top-0 left-0 right-0 h-1 transition-all ${
+                      selectedRole === "OWNER"
+                        ? "bg-primary-container shadow-[0_0_12px_#02f576]"
+                        : "bg-transparent"
+                    }`}
+                  />
+                  <div className="flex items-center justify-between mb-space-sm">
+                    <div className="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform">
+                      <span className="material-symbols-outlined text-lg">security</span>
+                    </div>
+                    <span
+                      className={`w-4 h-4 rounded-full flex items-center justify-center ${
+                        selectedRole === "OWNER" ? "bg-primary-container" : "bg-surface-container-lowest"
+                      }`}
+                    >
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full ${
+                          selectedRole === "OWNER" ? "bg-surface-container-lowest" : "bg-transparent"
+                        }`}
+                      />
+                    </span>
+                  </div>
+                  <h3 className="text-pure-white font-bold text-base leading-snug">
+                    System Owner
+                  </h3>
+                  <p className="text-xs text-primary-container font-medium tracking-wide uppercase mt-0.5">
+                    Governance &amp; Oversight
+                  </p>
+                  <ul className="mt-space-sm space-y-1">
+                    <li className="flex items-center gap-1.5 text-xs text-slate-muted">
+                      <span className="material-symbols-outlined text-sm text-primary-container">
+                        policy
+                      </span>
+                      Model &amp; Rule Registry
+                    </li>
+                    <li className="flex items-center gap-1.5 text-xs text-slate-muted">
+                      <span className="material-symbols-outlined text-sm text-primary-container">
+                        timeline
+                      </span>
+                      Traces (Masked PII)
+                    </li>
+                    <li className="flex items-center gap-1.5 text-xs text-slate-muted">
+                      <span className="material-symbols-outlined text-sm text-primary-container">
+                        savings
+                      </span>
+                      Cost Analytics &amp; Runs
                     </li>
                   </ul>
                 </button>
@@ -396,7 +460,11 @@ export function LoginRoleSwitchView() {
                       <span className="text-xs font-medium">Gateway Context:</span>
                     </div>
                     <span className="text-xs font-bold text-primary-container uppercase tracking-wider">
-                      {selectedRole === "RM" ? "RELATIONSHIP MANAGER" : "CREDIT ANALYST"}
+                      {selectedRole === "RM"
+                        ? "RELATIONSHIP MANAGER"
+                        : selectedRole === "ANALYST"
+                        ? "CREDIT ANALYST"
+                        : "SYSTEM OWNER & GOVERNANCE"}
                     </span>
                   </div>
 

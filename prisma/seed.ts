@@ -53,7 +53,19 @@ async function main() {
     },
   });
 
-  console.log("Created users:", [rmUser.name, analystUser.name, priyaRm.name]);
+  const ownerUser = await prisma.user.create({
+    data: {
+      id: "usr_owner_mehta",
+      email: "owner.governance@corporate.kestrel.internal",
+      name: "Vikram Mehta",
+      role: "OWNER",
+      title: "Chief Governance & System Owner",
+      department: "Executive Oversight & Internal Audit",
+      avatarUrl: "/avatars/vikram.png",
+    },
+  });
+
+  console.log("Created users:", [rmUser.name, analystUser.name, priyaRm.name, ownerUser.name]);
 
   // 2. Businesses
   const business1 = await prisma.applicantBusiness.create({

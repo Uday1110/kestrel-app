@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { UserRole, UserSession } from "@/types/domain";
+import { UserSession } from "@/types/domain";
 
 interface HeaderProps {
   user: UserSession;
@@ -10,41 +10,53 @@ interface HeaderProps {
 
 export function Header({ user }: HeaderProps) {
   const router = useRouter();
-  const [switching, setSwitching] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
 
-  const handleRoleSwitch = async (targetRole: UserRole) => {
-    if (user.role === targetRole || switching) return;
-    setSwitching(true);
+  const handleLogout = async () => {
+    if (loggingOut) return;
+    setLoggingOut(true);
     try {
-      const res = await fetch("/api/auth/switch-role", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ role: targetRole }),
-      });
-      if (res.ok) {
-        if (targetRole === "RM") {
-          router.push("/dashboard");
-        } else {
-          router.push("/queue");
-        }
-        router.refresh();
-      }
+      await fetch("/api/auth/logout", { method: "POST" });
+      router.push("/login");
+      router.refresh();
     } catch (err) {
-      console.error("Failed to switch role", err);
-    } finally {
-      setSwitching(false);
+      console.error("Logout failed:", err);
+      setLoggingOut(false);
     }
   };
 
-  const handleLogout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/login");
-    router.refresh();
+  const getRoleBadge = () => {
+    switch (user.role) {
+      case "OWNER":
+        return {
+          label: "System Owner & Governance",
+          shortLabel: "Owner",
+          icon: "security",
+          classes: "bg-surface-dark-elevated text-primary-container border-primary-container/40 shadow-[0_0_12px_rgba(2,245,118,0.2)]",
+        };
+      case "ANALYST":
+        return {
+          label: "Credit Underwriting Analyst",
+          shortLabel: "Analyst",
+          icon: "fact_check",
+          classes: "bg-surface-dark-elevated text-secondary border-secondary/40 shadow-[0_0_12px_rgba(201,190,255,0.2)]",
+        };
+      case "RM":
+      default:
+        return {
+          label: "Relationship Manager (RM)",
+          shortLabel: "RM",
+          icon: "folder_shared",
+          classes: "bg-surface-dark-elevated text-primary border-primary/40 shadow-[0_0_12px_rgba(2,245,118,0.15)]",
+        };
+    }
   };
+
+  const roleBadge = getRoleBadge();
 
   return (
     <header className="fixed top-0 left-0 lg:left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 flex items-center justify-between px-4 lg:px-space-lg border-b border-surface-container-high/40">
-      {/* Left controls: Role Switcher & Compliance */}
+      {/* Left controls: Role Badge & Compliance */}
       <div className="flex items-center gap-space-md">
         {/* Mobile Brand icon on small screens */}
         <div className="flex lg:hidden items-center gap-2">
@@ -54,34 +66,16 @@ export function Header({ user }: HeaderProps) {
           <span className="font-bold text-pure-white text-sm">Kestrel</span>
         </div>
 
-        {/* Dual Role Clearance Gateway Switch */}
-        <div className="inline-flex items-center bg-surface-container-lowest p-0.5 rounded-lg border border-surface-container-high/60">
-          <button
-            type="button"
-            onClick={() => handleRoleSwitch("RM")}
-            disabled={switching}
-            className={`px-2.5 sm:px-space-md py-1 rounded-md text-xs font-semibold transition-all ${
-              user.role === "RM"
-                ? "bg-surface-dark-elevated text-primary-container font-bold shadow-[0_0_12px_rgba(2,245,118,0.2)]"
-                : "text-slate-muted hover:text-pure-white"
-            }`}
-          >
-            <span className="hidden sm:inline">Relationship Manager (RM)</span>
-            <span className="sm:hidden">RM</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => handleRoleSwitch("ANALYST")}
-            disabled={switching}
-            className={`px-2.5 sm:px-space-md py-1 rounded-md text-xs font-semibold transition-all ${
-              user.role === "ANALYST"
-                ? "bg-surface-dark-elevated text-primary-container font-bold shadow-[0_0_12px_rgba(2,245,118,0.2)]"
-                : "text-slate-muted hover:text-pure-white"
-            }`}
-          >
-            <span className="hidden sm:inline">Credit Analyst</span>
-            <span className="sm:hidden">Analyst</span>
-          </button>
+        {/* Server-Enforced Role Status Pill (No in-app switching) */}
+        <div
+          data-testid="authenticated-role-badge"
+          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold border ${roleBadge.classes}`}
+          title="Server-enforced authenticated role. To change roles, sign out and sign in with the target credentials."
+        >
+          <span className="material-symbols-outlined text-[16px]">{roleBadge.icon}</span>
+          <span className="hidden sm:inline">{roleBadge.label}</span>
+          <span className="sm:hidden">{roleBadge.shortLabel}</span>
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-container ml-1"></span>
         </div>
 
         {/* Compliance pill on wide screens */}
@@ -93,7 +87,7 @@ export function Header({ user }: HeaderProps) {
         </div>
       </div>
 
-      {/* Right controls: User profile & Gateway badge */}
+      {/* Right controls: User profile & Explicit Sign Out */}
       <div className="flex items-center gap-space-sm sm:gap-space-md">
         <div className="hidden sm:flex flex-col text-right">
           <span className="text-xs sm:text-sm text-pure-white font-semibold leading-tight">
@@ -104,14 +98,17 @@ export function Header({ user }: HeaderProps) {
           </span>
         </div>
 
-        {/* User avatar circle */}
-        <div
+        {/* Explicit Sign Out Button */}
+        <button
+          type="button"
           onClick={handleLogout}
-          title="Sign out of clearance gateway"
-          className="w-8 h-8 rounded-full bg-surface-dark-elevated border border-primary-container/40 flex items-center justify-center cursor-pointer hover:border-primary-container transition-all text-primary-container"
+          disabled={loggingOut}
+          title="Sign out of Kestrel Finance"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high border border-surface-container-high/80 text-xs font-medium text-slate-muted hover:text-pure-white transition-all focus:outline-none focus:ring-1 focus:ring-primary-container"
         >
-          <span className="material-symbols-outlined text-[18px]">person</span>
-        </div>
+          <span className="material-symbols-outlined text-[16px] text-error">logout</span>
+          <span className="hidden md:inline">{loggingOut ? "Signing out..." : "Sign Out"}</span>
+        </button>
       </div>
     </header>
   );

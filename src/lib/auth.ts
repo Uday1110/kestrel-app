@@ -20,6 +20,15 @@ export const DEMO_USERS: Record<string, UserSession> = {
     department: "Credit Risk & Underwriting",
     avatarUrl: null,
   },
+  owner: {
+    id: "usr_owner_mehta",
+    email: "owner.governance@corporate.kestrel.internal",
+    name: "Vikram Mehta",
+    role: "OWNER",
+    title: "Chief Governance & System Owner",
+    department: "Executive Oversight & Internal Audit",
+    avatarUrl: null,
+  },
 };
 
 const SESSION_COOKIE_NAME = "kestrel_session";

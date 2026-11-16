@@ -36,7 +36,17 @@ A secure, full-stack corporate lending intake and application preparation platfo
   - `Recommend Sanction` (escalate to Sanction Committee)
   - `Reject Application` (formal credit decline with recorded justification)
 
-### 3. Baseline Analytics & Telemetry
+### 3. System Owner & Governance Stakeholders
+- **Independent Oversight Portal (`/owner`):** Strictly restricted to authorized system owners under server-enforced least privilege (`requireRole(["OWNER"])`). Non-owner roles (RM, Analyst) are denied access with HTTP 403 Forbidden.
+- **Urgent Governance Exceptions First:** High-priority alerts for overdue model risk reviews, missing board approval records, unresolved critical borrower outreach (>5 days), and checksum conflicts.
+- **Key Operational Telemetry:** Real-time tracking of throughput, straight-through processing (STP) rate, manual handling rate, document defect rate, average cycle time (15.2 days vs 20.8d baseline), and active pipeline exposure (₹ Cr).
+- **Model & Policy Registry:** Complete catalog of production models and directives (4-Directive Validation Engine, 8-Gate Corporate Lending Checklist, Cycle Governance Directive 2026.Q1, Borrower Chasing SLA Policy) with approving authority, review due dates, and threshold modification history.
+- **End-to-End Case Traces with PII Masking:** Comprehensive lifecycle timeline from RM intake to final sanction committee decision with per-step latency, confidence scores, and strict PII minimization (names, emails, phones, PAN, and CIN are masked).
+- **Structured Logs & Configurable Alerts:** System logs grouped by source system with statutory audit retention policy (RBI Master Direction 2025/WC-4: 8-year archival) and on-call alerting rules.
+- **Cost Analytics & Vendor Tolerance:** Itemized breakdown across cloud compute, measured encrypted storage, third-party vendor APIs, and support effort with transparency labels distinguishing measured facts from benchmark models, plus vendor unit-cost tolerance checks.
+- **Cryptographic Export Hub:** One-click CSV and PDF/Text formal governance reports with immutable audit commit logging.
+
+### 4. Baseline Analytics & Telemetry
 - **Role-Aware Dashboards:** Track aggregate cycle duration (18.0 working days vs 24.5-day pre-Kestrel baseline), active pipeline exposure (₹ Cr), clean checksum integrity rates, and intake readiness.
 - **5-Gate Stage Duration Breakdown:** Interactive visualizer toggling between days and percentages across:
   - *Gate 1: RM Intake* (4.5 days)
@@ -92,9 +102,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```bash
 npm test
 ```
-Runs 12 focused integration tests verifying:
-- Server-side role authorization (RM prevented from underwriting; Analyst execution permitted)
+Runs 21 comprehensive integration tests verifying:
+- Server-side role authorization (RM prevented from underwriting; Analyst execution permitted; Owner portal protected)
+- Removal of in-app profile/role switching (HTTP 403 Forbidden with audit refusal commit)
 - Document validation directives (file formats, 25MB limits, SHA-256 duplicate collision detection)
+- PII data masking (names, corporate emails, phones, and statutory identifiers masked in traces and exports)
+- Owner telemetry, urgent exception prioritization, and model registry overdue review tracking
+- Cost analytics and vendor tolerance overage detection
+- Data freshness status tracking and hourly recalculation
+- Governance report exports (CSV & formal dossier with actor audit attribution)
 - Application lifecycle & readiness scoring (8-gate initialization, status transitions, blocker waivers)
 - Financial governance boundaries (factual mathematical collations without automated credit scores)
 
@@ -102,10 +118,11 @@ Runs 12 focused integration tests verifying:
 
 ## 👥 Seeded Demo Credentials
 
-Use the internal clearance gateway at `/login` or use the header role switcher in development mode:
+Authentication is strictly server-enforced. In accordance with Institutional Governance & Segregation of Duties (SoD), in-app role switching has been disabled; users must sign out and authenticate with the designated role credentials:
 
 | Role | Name | Staff ID / Email | OTP Token | Default Destination |
 | :--- | :--- | :--- | :--- | :--- |
+| **System Owner & Governance** | Vikram Mehta | `owner.governance@corporate.kestrel.internal` | `71940285` | `/owner` |
 | **Relationship Manager (RM)** | Naveen Sharma | `rm.sharma@corporate.kestrel.internal` | `94821034` | `/dashboard` |
 | **Credit Analyst** | Arunachalam V. | `analyst.williams@corporate.kestrel.internal` | `88219401` | `/queue` |
 | **Relationship Manager 2** | Priya Deshmukh | `priya.deshmukh@corporate.kestrel.internal` | `94821034` | `/dashboard` |
@@ -157,6 +174,7 @@ The SQLite database comes pre-seeded with real-world corporate lending cases:
 | `analyst_intake_queue` | `/queue` | Underwriting intake queue, facility type tabs, search & filtering, priority triage badges. |
 | `analyst_application_review`| `/analyst/review/[id]` | 50/50 split layout, interactive document viewer (zoom/pan), analyst notes, human decision actions. |
 | `financial_preparation_assistant` | `/financial-assistant` | Arithmetic collation workbench, revenue/EBITDA/DSCR metrics, source citations, edit extractions. |
+| `owner_governance_dashboard` | `/owner` | System owner & governance oversight portal: urgent exceptions, policy registry, traces, logs, costs. |
 | *Enterprise Document Store* | `/documents` | Centralized repository of all corporate documents with validation statuses and quick preview drawers. |
 
 ---

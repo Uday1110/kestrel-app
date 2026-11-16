@@ -5,7 +5,17 @@ const nextConfig = {
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {
-        ignored: ['**/node_modules/**', '**/.git/**', '**/.next/**'],
+        poll: false,
+        followSymlinks: false,
+        ignored: [
+          '**/node_modules/**',
+          '**/.git/**',
+          '**/.next/**',
+          '**/storage/**',
+          'C:/**',
+          'C:/*.*',
+          '**/dev.db*',
+        ],
       };
     }
     return config;

@@ -49,7 +49,7 @@ export function BaselineDashboardView({ metrics, user }: BaselineDashboardViewPr
       </div>
 
       {/* Hero Baseline KPIs Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-gutter mb-space-xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-gutter mb-space-xl">
         {/* Metric 1: Aggregate Cycle */}
         <div className="bg-surface-dark p-space-lg rounded-xl shadow-md flex flex-col justify-between relative group hover:bg-surface-dark-elevated transition-colors border border-surface-container-high/40">
           <div className="flex items-center justify-between mb-space-sm">
@@ -78,35 +78,7 @@ export function BaselineDashboardView({ metrics, user }: BaselineDashboardViewPr
           </div>
         </div>
 
-        {/* Metric 2: Pre-Kestrel Baseline */}
-        <div className="bg-surface-dark p-space-lg rounded-xl shadow-md flex flex-col justify-between relative group hover:bg-surface-dark-elevated transition-colors border border-surface-container-high/40">
-          <div className="flex items-center justify-between mb-space-sm">
-            <span className="text-xs text-slate-muted uppercase tracking-wider font-semibold">
-              Pre-Kestrel Baseline
-            </span>
-            <span className="material-symbols-outlined text-secondary text-[20px]">
-              history_toggle_off
-            </span>
-          </div>
-          <div className="mb-space-md">
-            <div className="flex items-baseline gap-space-xs">
-              <span className="text-3xl sm:text-4xl font-bold text-pure-white">
-                {metrics.preKestrelBaselineDays.toFixed(1)}
-              </span>
-              <span className="text-xs font-semibold text-slate-muted">Days</span>
-            </div>
-            <p className="text-xs text-slate-muted mt-1">Manual intake verification legacy index</p>
-          </div>
-          <div className="pt-2 bg-surface-container-lowest/60 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl flex items-center justify-between border-t border-surface-container-high/30">
-            <span className="text-xs text-secondary flex items-center gap-1 font-semibold">
-              <span className="material-symbols-outlined text-[16px]">savings</span>
-              13.4% intake velocity gain
-            </span>
-            <span className="text-[11px] text-slate-muted">Static base</span>
-          </div>
-        </div>
-
-        {/* Metric 3: Target SLA */}
+        {/* Metric 2: Target SLA */}
         <div className="bg-surface-dark p-space-lg rounded-xl shadow-md flex flex-col justify-between relative group hover:bg-surface-dark-elevated transition-colors border border-surface-container-high/40">
           <div className="flex items-center justify-between mb-space-sm">
             <span className="text-xs text-slate-muted uppercase tracking-wider font-semibold">
@@ -134,7 +106,7 @@ export function BaselineDashboardView({ metrics, user }: BaselineDashboardViewPr
           </div>
         </div>
 
-        {/* Metric 4: Automation Efficiency */}
+        {/* Metric 3: Automation Efficiency */}
         <div className="bg-surface-dark p-space-lg rounded-xl shadow-md flex flex-col justify-between relative group hover:bg-surface-dark-elevated transition-colors border border-surface-container-high/40">
           <div className="flex items-center justify-between mb-space-sm">
             <span className="text-xs text-slate-muted uppercase tracking-wider font-semibold">
